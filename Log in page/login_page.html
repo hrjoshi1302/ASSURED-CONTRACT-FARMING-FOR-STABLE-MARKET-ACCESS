@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in & Sign up Form</title>
+    <link rel="stylesheet" href="styles_login.css" />
+    <style>
+        .captcha-container {
+            text-align: center;
+        }
+        .captcha {
+            display: inline-block;
+            text-shadow: 1px 1px 2px;
+            border-radius: 10px;
+            font-size: 24px;
+            letter-spacing: 3px;
+            font-weight: bold;
+            user-select: none;
+            padding: 10px;
+        }
+        .captcha-input {
+            margin-top:2px;
+            padding: 7px;
+            font-size: 16px;
+            width: 90%;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .buttons {
+            margin-top: 7px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 14px;
+            margin: 4px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            font-size: 14.6px;
+            padding: 12px 21px;
+            transition: all 0.5s;
+        }
+        .btn-refresh {
+            background-color: #ffffff;
+            color: #000000;
+            margin-bottom: 2px;
+        }
+        .btn-voice {
+            background-color: #ffffff;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="box">
+            <div class="logo">
+
+                <div>
+                    <h2 id="ministry-heading">MINISTRY OF AGRICULTURE AND FARMERS WELFARE</h2>
+                    <p id="ministry-subheading">कृषि एवं किसान कल्याण मंत्रालय</p>
+                </div>
+            </div>
+            <div class="inner-box">
+                <div class="forms-wrap">
+                    <!-- Sign In Form -->
+                    <form action="../Home page/homepage_f.html" autocomplete="off" class="sign-in-form">
+                        <div class="heading">
+                            <h2 id="signin-welcome">Welcome Back</h2>
+                            <h6 id="signin-register">Not registered yet?</h6>
+                            <a href="#" class="toggle" id="signin-toggle">Sign up</a>
+                        </div>
+
+                        <div class="actual-form">
+                            <div class="input-wrap">
+                                <input
+                                    type="text"
+                                    minlength="4"
+                                    class="input-field"
+                                    autocomplete="off"
+                                    id="name"
+                                    required
+                                />
+                                <label for="name" id="label-name">Name</label>
+                            </div>
+
+                            <div class="input-wrap">
+                                <input
+                                    type="password"
+                                    minlength="4"
+                                    class="input-field"
+                                    autocomplete="off"
+                                    id="password"
+                                    required
+                                />
+                                <label for="password" id="label-password">Password</label>
+                            </div>
+
+                            <div class="captcha-container">
+                                <div class="captcha" id="captcha">123AB</div>
+                                <input type="text" class="captcha-input" id="captcha-input" placeholder="Enter CAPTCHA">
+                                <div class="buttons">
+                                    <button type="button" class="btn btn-refresh" onclick="generateCaptcha()">Refresh CAPTCHA</button>
+                                    <button type="button" class="btn btn-voice" onclick="playCaptcha()">🔊</button>
+                                </div>
+                            </div>
+
+                            <input type="submit" value="Sign In" class="sign-btn" id="signin-btn"/>
+
+                            <p class="text" id="signin-help-text">
+                                Forgotten your password or your login details?
+                                <a href="#">Get help</a> signing in
+                            </p>
+                        </div>
+                    </form>
+
+                    <!-- Sign Up Form -->
+                    <form action="../Home page/homepage_f.html" autocomplete="off" class="sign-up-form">
+                        <div class="heading">
+                            <h2 id="signup-get-started">Get Started</h2>
+                            <h6 id="signup-already-account">Already have an account?</h6>
+                            <a href="#" class="toggle" id="signup-toggle">Sign in</a>
+                        </div>
+
+                        <div class="actual-form">
+                            <div class="input-wrap">
+                                <input
+                                    type="text"
+                                    minlength="4"
+                                    class="input-field"
+                                    autocomplete="off"
+                                    id="name-signup"
+                                    required
+                                />
+                                <label for="name" id="label-name-signup">Name</label>
+                            </div>
+
+                            <div class="input-wrap">
+                                <input
+                                    type="email"
+                                    class="input-field"
+                                    autocomplete="off"
+                                    id="email-signup"
+                                    required
+                                />
+                                <label for="email" id="label-email-signup">Email</label>
+                            </div>
+
+                            <div class="input-wrap">
+                                <input
+                                    type="password"
+                                    minlength="4"
+                                    class="input-field"
+                                    autocomplete="off"
+                                    id="password-signup"
+                                    required
+                                />
+                                <label for="password" id="label-password-signup">Password</label>
+                            </div>
+
+                            <!-- CAPTCHA for Sign-Up Form -->
+                            <div class="captcha-container">
+                                <div class="captcha" id="signup-captcha">123AB</div>
+                                <input type="text" class="captcha-input" id="signup-captcha-input" placeholder="Enter CAPTCHA">
+                                <div class="buttons">
+                                    <button type="button" class="btn btn-refresh" onclick="generateCaptcha()">Refresh CAPTCHA</button>
+                                    <button type="button" class="btn btn-voice" onclick="playCaptcha()">🔊</button>
+                                </div>
+                            </div>
+
+                            <input type="submit" value="Sign Up" class="sign-btn" id="signup-btn"/>
+
+                            <p class="text" id="signup-terms">
+                                By signing up, I agree to the
+                                <a href="#">Terms of Services</a> and
+                                <a href="#">Privacy Policy</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="carousel">
+                    <div class="images-wrapper">
+                      <img src="lg_pic_1.webp" class="image img-1 show" alt="Image1" />
+                      <img src="lg_pic_2.webp" class="image img-2" alt="Image2" />
+                      <img src="lg_pic_3.webp" class="image img-3" alt="Image3" />
+                    </div>
+
+        
+                      <div class="bullets">
+                        <span class="active" data-value="1"></span>
+                        <span data-value="2"></span>
+                        <span data-value="3"></span>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="login.js"></script>
+
+    <script>
+        function generateCaptcha() {
+            const charsArray = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const lengthOtp = 5;
+            let captcha = [];
+            for (let i = 0; i < lengthOtp; i++) {
+                const index = Math.floor(Math.random() * charsArray.length);
+                captcha.push(charsArray[index]);
+            }
+            const captchaStr = captcha.join("");
+            document.getElementById("captcha").innerText = captchaStr;
+            document.getElementById("signup-captcha").innerText = captchaStr;
+        }
+
+        function playCaptcha() {
+            const captchaText = document.getElementById("captcha").innerText || document.getElementById("signup-captcha").innerText;
+            const utterance = new SpeechSynthesisUtterance();
+            const spacedText = captchaText.split('').join(' ');
+            utterance.text = spacedText;
+            utterance.rate = 0.9;
+            utterance.pitch = 1;
+            speechSynthesis.speak(utterance);
+        }
+
+        // Retrieve selected language and update content accordingly
+        const lang = localStorage.getItem('selectedLanguage') || 'en';
+
+        const translations = {
+    en: {
+        ministryHeading: 'MINISTRY OF AGRICULTURE AND FARMERS WELFARE',
+        ministrySubheading: 'कृषि एवं किसान कल्याण मंत्रालय',
+        signinWelcome: 'Welcome Back',
+        signinRegister: 'Not registered yet?',
+        signinToggle: 'Sign up',
+        signinBtn: 'Sign In',
+        signinHelpText: 'Forgotten your password or your login details?',
+        signupGetStarted: 'Get Started',
+        signupAlreadyAccount: 'Already have an account?',
+        signupToggle: 'Sign in',
+        signupBtn: 'Sign Up',
+        signupTerms: 'By signing up, I agree to the Terms of Services and Privacy Policy',
+        labelName: 'Name',
+        labelPassword: 'Password',
+        labelEmail: 'Email',
+        captchaPlaceholder: 'Enter CAPTCHA'
+    },
+    hi: {
+        ministryHeading: 'कृषि एवं किसान कल्याण मंत्रालय',
+        ministrySubheading: 'MINISTRY OF AGRICULTURE AND FARMERS WELFARE',
+        signinWelcome: 'स्वागत है',
+        signinRegister: 'अभी तक पंजीकृत नहीं हैं?',
+        signinToggle: 'साइन अप करें',
+        signinBtn: 'साइन इन करें',
+        signinHelpText: 'क्या आपने अपना पासवर्ड या लॉगिन विवरण भुला दिया?',
+        signupGetStarted: 'शुरू करें',
+        signupAlreadyAccount: 'क्या आपके पास पहले से एक खाता है?',
+        signupToggle: 'साइन इन करें',
+        signupBtn: 'साइन अप करें',
+        signupTerms: 'साइन अप करके, मैं सेवा की शर्तों और गोपनीयता नीति से सहमत हूं',
+        labelName: 'नाम',
+        labelPassword: 'पासवर्ड',
+        labelEmail: 'ईमेल',
+        captchaPlaceholder: 'कैप्चा दर्ज करें'
+    },
+    as: {
+        ministryHeading: 'কৃষি আৰু কিষাণ কল্যাণ মন্ত্রক',
+        ministrySubheading: 'MINISTRY OF AGRICULTURE AND FARMERS WELFARE',
+        signinWelcome: 'স্বাগতম',
+        signinRegister: 'আপুনি এতিয়াও পঞ্জীকৃত নহয়?',
+        signinToggle: 'চাইন আপ কৰক',
+        signinBtn: 'সাইন ইন কৰক',
+        signinHelpText: 'আপুনি আপোনাৰ পাসৱাৰ্ড বা লগইন বিৱৰণ বেছি লৈছে নেকি?',
+        signupGetStarted: 'আৰম্ভ কৰক',
+        signupAlreadyAccount: 'আপোনাৰ ইতিমধ্যে এখন একাউণ্ট আছে নেকি?',
+        signupToggle: 'সাইন ইন কৰক',
+        signupBtn: 'সাইন আপ কৰক',
+        signupTerms: 'সাইন আপ কৰি, মই সেৱাৰ চৰ্ত আৰু গোপনীয়তা নীতিৰ সৈতে একমত',
+        labelName: 'নাম',
+        labelPassword: 'পাসৱাৰ্ড',
+        labelEmail: 'ইমেইল',
+        captchaPlaceholder: 'কেপচা সন্নিবেশ কৰক'
+    },
+    bn: {
+        ministryHeading: 'কৃষি ও কৃষক কল্যাণ মন্ত্রণালয়',
+        ministrySubheading: 'MINISTRY OF AGRICULTURE AND FARMERS WELFARE',
+        signinWelcome: 'স্বাগতম',
+        signinRegister: 'এখনও নিবন্ধিত হননি?',
+        signinToggle: 'সাইন আপ করুন',
+        signinBtn: 'সাইন ইন',
+        signinHelpText: 'আপনি আপনার পাসওয়ার্ড বা লগইন বিবরণ ভুলে গেছেন?',
+        signupGetStarted: 'শুরু করুন',
+        signupAlreadyAccount: 'আপনার কি ইতিমধ্যেই একটি অ্যাকাউন্ট আছে?',
+        signupToggle: 'সাইন ইন করুন',
+        signupBtn: 'সাইন আপ',
+        signupTerms: 'সাইন আপ করে, আমি পরিষেবার শর্তাবলী এবং গোপনীয়তা নীতির সাথে সম্মত',
+        labelName: 'নাম',
+        labelPassword: 'পাসওয়ার্ড',
+        labelEmail: 'ইমেইল',
+        captchaPlaceholder: 'ক্যাপচা প্রবেশ করান'
+    },
+    kn: {
+        ministryHeading: 'ಕೃಷಿ ಮತ್ತು ಕೃಷಿಕರ ಕಲ್ಯಾಣ ಸಚಿವಾಲಯ',
+        ministrySubheading: 'MINISTRY OF AGRICULTURE AND FARMERS WELFARE',
+        signinWelcome: 'ಸ್ವಾಗತ',
+        signinRegister: 'ನೀವು ಇನ್ನೂ ನೋಂದಾಯಿತರಾಗಿಲ್ಲವೇ?',
+        signinToggle: 'ಸೈನ್ ಅಪ್ ಮಾಡಿ',
+        signinBtn: 'ಸೈನ್ ಇನ್',
+        signinHelpText: 'ನೀವು ನಿಮ್ಮ ಪಾಸ್ವರ್ಡ್ ಅಥವಾ ಲಾಗಿನ್ ವಿವರಗಳನ್ನು ಮರೆತುಹೋಗಿದ್ದೀರಾ?',
+        signupGetStarted: 'ಪ್ರಾರಂಭಿಸಿ',
+        signupAlreadyAccount: 'ನಿಮ್ಮ ಬಳಿ ಈಗಾಗಲೇ ಖಾತೆಯಿದೆಯೆ?',
+        signupToggle: 'ಸೈನ್ ಇನ್ ಮಾಡಿ',
+        signupBtn: 'ಸೈನ್ ಅಪ್',
+        signupTerms: 'ಸೈನ್ ಅಪ್ ಮಾಡುವ ಮೂಲಕ, ನಾನು ಸೇವಾ ಷರತ್ತುಗಳು ಮತ್ತು ಗೌಪ್ಯತಾ ನೀತಿ ಅನ್ನು ಒಪ್ಪಿಸುತ್ತೇನೆ',
+        labelName: 'ಹೆಸರು',
+        labelPassword: 'ಪಾಸ್ವರ್ಡ್',
+        labelEmail: 'ಇಮೇಲ್',
+        captchaPlaceholder: 'ಕ್ಯಾಪ್ಚಾ ನಮೂದಿಸಿ'
+    },
+    gu: {
+        ministryHeading: 'કૃષિ અને ખેડૂત કલ્યાણ મંત્રાલય',
+        ministrySubheading: 'MINISTRY OF AGRICULTURE AND FARMERS WELFARE',
+        signinWelcome: 'સ્વાગત છે',
+        signinRegister: 'હજુ નોંધણી કરેલ નથી?',
+        signinToggle: 'સાઇન અપ કરો',
+        signinBtn: 'સાઇન ઇન',
+        signinHelpText: 'તમે તમારા પાસવર્ડ અથવા લોગિન વિગતો ભૂલી ગયા છો?',
+        signupGetStarted: 'શરુ કરો',
+        signupAlreadyAccount: 'તમે પહેલાથી જ એક ખાતું ધરાવ છો?',
+        signupToggle: 'સાઇન ઇન કરો',
+        signupBtn: 'સાઇન અપ',
+        signupTerms: 'સાઇન અપ કરીને, હું સેવાનાં શરતો અને ગોપનીયતા નીતિ સાથે સહમત છું',
+        labelName: 'નામ',
+        labelPassword: 'પાસવર્ડ',
+        labelEmail: 'ઇમેઇલ',
+        captchaPlaceholder: 'કૅપ્ચા દાખલ કરો'
+    },
+    ml: {
+        ministryHeading: 'കൃഷിയും കിസാൻ ക്ഷേമ മന്ത്രാലയം',
+        ministrySubheading: 'MINISTRY OF AGRICULTURE AND FARMERS WELFARE',
+        signinWelcome: 'സ്വാഗതം',
+        signinRegister: 'നിങ്ങൾ ഇപ്പോഴും രജിസ്റ്റർ ചെയ്തിട്ടില്ലേ?',
+        signinToggle: 'സൈൻ അപ്പ്',
+        signinBtn: 'സൈൻ ഇൻ',
+        signinHelpText: 'നിങ്ങളുടെ പാസ്വേഡോ അല്ലെങ്കിൽ ലോഗിൻ വിവരങ്ങളോ നിങ്ങൾ മറന്നോ?',
+        signupGetStarted: 'ആരംഭിക്കുക',
+        signupAlreadyAccount: 'നിങ്ങളുടെ ഇതിനകം അക്കൗണ്ട് ഉണ്ടോ?',
+        signupToggle: 'സൈൻ ഇൻ',
+        signupBtn: 'സൈൻ അപ്പ്',
+        signupTerms: 'സൈൻ അപ്പ് ചെയ്ത്, ഞാൻ സേവന നിബന്ധനകളും സ്വകാര്യതാ നയവും സമ്മതിക്കുന്നു',
+        labelName: 'നാമം',
+        labelPassword: 'പാസ്വേഡ്',
+        labelEmail: 'ഇമെയിൽ',
+        captchaPlaceholder: 'ക്യാപ്ച സംവരണം'
+    },
+    mr: {
+        ministryHeading: 'कृषी आणि शेतकरी कल्याण मंत्रालय',
+        ministrySubheading: 'MINISTRY OF AGRICULTURE AND FARMERS WELFARE',
+        signinWelcome: 'स्वागत आहे',
+        signinRegister: 'आधीच नोंदणी केली नाही का?',
+        signinToggle: 'साइन अप करा',
+        signinBtn: 'साइन इन करा',
+        signinHelpText: 'तुम्ही तुमचा पासवर्ड किंवा लॉगिन तपशील विसरला आहात का?',
+        signupGetStarted: 'सुरू करा',
+        signupAlreadyAccount: 'तुमच्याकडे आधीच एक खाते आहे का?',
+        signupToggle: 'साइन इन करा',
+        signupBtn: 'साइन अप',
+        signupTerms: 'साइन अप करून, मी सेवा अटी आणि गोपनीयता धोरणास सहमत आहे',
+        labelName: 'नाव',
+        labelPassword: 'पासवर्ड',
+        labelEmail: 'ईमेल',
+        captchaPlaceholder: 'कॅप्चा प्रविष्ट करा'
+    },
+    or: {
+        ministryHeading: 'କୃଷି ଓ କିଷାନ କଲ୍ୟାଣ ମନ୍ତ୍ରଣାଳୟ',
+        ministrySubheading: 'MINISTRY OF AGRICULTURE AND FARMERS WELFARE',
+        signinWelcome: 'ସ୍ବାଗତ',
+        signinRegister: 'ଆପଣ ଏପର୍ଯ୍ୟନ୍ତ ପଞ୍ଜୀକୃତ ନୁହେଁ କି?',
+        signinToggle: 'ସାଇନ୍ ଅପ୍ କରନ୍ତୁ',
+        signinBtn: 'ସାଇନ୍ ଇନ୍',
+        signinHelpText: 'ଆପଣ ଆପଣଙ୍କର ପାସୱାର୍ଡ କିମ୍ବା ଲଗଇନ୍ ବିବରଣୀ ଭୁଲିଗଲେ?',
+        signupGetStarted: 'ଆରମ୍ଭ କରନ୍ତୁ',
+        signupAlreadyAccount: 'ଆପଣଙ୍କର ପୂର୍ବରୁ ଏକ ଖାତା ଅଛି କି?',
+        signupToggle: 'ସାଇନ୍ ଇନ୍ କରନ୍ତୁ',
+        signupBtn: 'ସାଇନ୍ ଅପ୍',
+        signupTerms: 'ସାଇନ୍ ଅପ୍ କରି, ମୁଁ ସେବା ଶର୍ତ୍ତାବଳୀ ଏବଂ ଗୋପନୀୟତା ନୀତି ସହିତ ସହମତ',
+        labelName: 'ନାମ',
+        labelPassword: 'ପାସୱାର୍ଡ',
+        labelEmail: 'ଇମେଇଲ୍',
+        captchaPlaceholder: 'କ୍ୟାପ୍ଚା ଭରନ୍ତୁ'
+    },
+    pa: {
+        ministryHeading: 'ਕਿਸਾਨ ਤੇ ਕਿਸਾਨ ਭਲਾਈ ਮੰਤ੍ਰਾਲਾ',
+        ministrySubheading: 'MINISTRY OF AGRICULTURE AND FARMERS WELFARE',
+        signinWelcome: 'ਸਵਾਗਤ ਹੈ',
+        signinRegister: 'ਅਜੇ ਤੱਕ ਰਜਿਸਟਰ ਨਹੀਂ ਹੋਏ?',
+        signinToggle: 'ਸਾਈਨ ਅਪ ਕਰੋ',
+        signinBtn: 'ਸਾਈਨ ਇਨ',
+        signinHelpText: 'ਕੀ ਤੁਸੀਂ ਆਪਣੇ ਪਾਸਵਰਡ ਜਾਂ ਲੌਗਿਨ ਵੇਰਵੇ ਭੁੱਲ ਗਏ ਹੋ?',
+        signupGetStarted: 'ਸ਼ੁਰੂ ਕਰੋ',
+        signupAlreadyAccount: 'ਕੀ ਤੁਹਾਡੇ ਕੋਲ ਪਹਿਲਾਂ ਹੀ ਖਾਤਾ ਹੈ?',
+        signupToggle: 'ਸਾਈਨ ਇਨ ਕਰੋ',
+        signupBtn: 'ਸਾਈਨ ਅਪ',
+        signupTerms: 'ਸਾਈਨ ਅਪ ਕਰਕੇ, ਮੈਂ ਸੇਵਾ ਦੀਆਂ ਸ਼ਰਤਾਂ ਅਤੇ ਗੋਪਨੀਯਤਾ ਨੀਤੀ ਨਾਲ ਸਹਿਮਤ ਹਾਂ',
+        labelName: 'ਨਾਮ',
+        labelPassword: 'ਪਾਸਵਰਡ',
+        labelEmail: 'ਈਮੇਲ',
+        captchaPlaceholder: 'ਕੈਪਚਾ ਦਰਜ ਕਰੋ'
+    },
+    ta: {
+        ministryHeading: 'விவசாயம் மற்றும் விவசாயிகள் நலன் அமைச்சு',
+        ministrySubheading: 'MINISTRY OF AGRICULTURE AND FARMERS WELFARE',
+        signinWelcome: 'வரவேற்கிறேன்',
+        signinRegister: 'முன்பு பதிவு செய்யப்படவில்லைவா?',
+        signinToggle: 'பதிவு செய்யவும்',
+        signinBtn: 'சைன் இன்',
+        signinHelpText: 'உங்கள் கடவுச்சொல்லை அல்லது உள்நுழைவுக் குறிப்புகளை நீங்கள் மறந்துவிட்டீர்களா?',
+        signupGetStarted: 'தொடங்கு',
+        signupAlreadyAccount: 'உங்களிடம் ஏற்கனவே ஒரு கணக்கு உண்டா?',
+        signupToggle: 'சைன் இன்',
+        signupBtn: 'சைன் அப்',
+        signupTerms: 'பதிவு செய்து, நான் சேவைக் கொள்கைகளும் தனியுரிமைக் கொள்கைகளும் உடன்படுகிறேன்',
+        labelName: 'பெயர்',
+        labelPassword: 'கடவுச்சொல்',
+        labelEmail: 'மின்னஞ்சல்',
+        captchaPlaceholder: 'கேப்சா உள்ளிடவும்'
+    },
+    te: {
+        ministryHeading: 'క్రిషి మరియు రైతుల సంక్షేమం శాఖ',
+        ministrySubheading: 'MINISTRY OF AGRICULTURE AND FARMERS WELFARE',
+        signinWelcome: 'స్వాగతం',
+        signinRegister: 'ఇంతవరకు నమోదయ్యారా?',
+        signinToggle: 'సైన్ అప్ చేయండి',
+        signinBtn: 'సైన్ ఇన్',
+        signinHelpText: 'మీ పాస్వర్డ్ లేదా లాగిన్ వివరాలను మర్చిపోయారా?',
+        signupGetStarted: 'ప్రారంభించండి',
+        signupAlreadyAccount: 'మీకు ఇప్పటికే ఖాతా ఉందా?',
+        signupToggle: 'సైన్ ఇన్ చేయండి',
+        signupBtn: 'సైన్ అప్',
+        signupTerms: 'సైన్ అప్ చేయడం ద్వారా, నేను సేవా నిబంధనలతో మరియు గోప్యతా విధి సంగతులతో అంగీకరించాను',
+        labelName: 'పేరు',
+        labelPassword: 'పాస్వర్డ్',
+        labelEmail: 'ఇమెయిల్',
+        captchaPlaceholder: 'క్యాప్చా నమోదు చేయండి'
+    },
+    ur: {
+        ministryHeading: 'وزارت زراعت اور کسانوں کی فلاح',
+        ministrySubheading: 'MINISTRY OF AGRICULTURE AND FARMERS WELFARE',
+        signinWelcome: 'خوش آمدید',
+        signinRegister: 'ابھی تک رجسٹرڈ نہیں ہیں؟',
+        signinToggle: 'سائن اپ کریں',
+        signinBtn: 'سائن ان کریں',
+        signinHelpText: 'کیا آپ نے اپنا پاس ورڈ یا لاگ ان کی تفصیلات بھول گئیں؟',
+        signupGetStarted: 'شروع کریں',
+        signupAlreadyAccount: 'کیا آپ کے پاس پہلے سے ایک اکاؤنٹ ہے؟',
+        signupToggle: 'سائن ان کریں',
+        signupBtn: 'سائن اپ کریں',
+        signupTerms: 'سائن اپ کرکے، میں خدمات کی شرائط اور رازداری کی پالیسی سے متفق ہوں',
+        labelName: 'نام',
+        labelPassword: 'پاس ورڈ',
+        labelEmail: 'ای میل',
+        captchaPlaceholder: 'کیپچا درج کریں'
+    },
+    mni: {
+        ministryHeading: 'খেত-মজুর কল্যাণ মন্ত্রক',
+        ministrySubheading: 'MINISTRY OF AGRICULTURE AND FARMERS WELFARE',
+        signinWelcome: 'স্বাগতম',
+        signinRegister: 'এখনও রেজিস্টার হননি?',
+        signinToggle: 'সাইন আপ করুন',
+        signinBtn: 'সাইন ইন করুন',
+        signinHelpText: 'আপনি আপনার পাসওয়ার্ড বা লগইন বিবরণ ভুলে গেছেন?',
+        signupGetStarted: 'শুরু করুন',
+        signupAlreadyAccount: 'আপনার কি ইতিমধ্যে একটি অ্যাকাউন্ট আছে?',
+        signupToggle: 'সাইন ইন করুন',
+        signupBtn: 'সাইন আপ',
+        signupTerms: 'সাইন আপ করে, আমি পরিষেবার শর্তাবলী এবং গোপনীয়তা নীতির সাথে সম্মত',
+        labelName: 'নাম',
+        labelPassword: 'পাসওয়ার্ড',
+        labelEmail: 'ইমেইল',
+        captchaPlaceholder: 'ক্যাপচা প্রবেশ করান'
+    },
+    ks: {
+        ministryHeading: 'زرعی اور کسان بھلائی وزارت',
+        ministrySubheading: 'MINISTRY OF AGRICULTURE AND FARMERS WELFARE',
+        signinWelcome: 'خوش آمدید',
+        signinRegister: 'ابھی تک رجسٹر نہیں ہیں؟',
+        signinToggle: 'سائن اپ کریں',
+        signinBtn: 'سائن ان کریں',
+        signinHelpText: 'کیا آپ نے اپنا پاس ورڈ یا لاگ ان کی تفصیلات بھول گئیں؟',
+        signupGetStarted: 'شروع کریں',
+        signupAlreadyAccount: 'کیا آپ کے پاس پہلے سے ایک اکاؤنٹ ہے؟',
+        signupToggle: 'سائن ان کریں',
+        signupBtn: 'سائن اپ کریں',
+        signupTerms: 'سائن اپ کرکے، میں خدمات کی شرائط اور رازداری کی پالیسی سے متفق ہوں',
+        labelName: 'نام',
+        labelPassword: 'پاس ورڈ',
+        labelEmail: 'ای میل',
+        captchaPlaceholder: 'کیپچا درج کریں'
+    },
+    doi: {
+    ministryHeading: 'MINISTRY OF AGRICULTURE AND FARMERS WELFARE',
+    ministrySubheading: 'کِشِی اتے کسان بھلائی وزارت',
+    signinWelcome: 'خوش آمدید',
+    signinRegister: 'ابھی تک رجسٹرڈ نہیں؟',
+    signinToggle: 'سائن اپ کریں',
+    signinBtn: 'سائن ان کریں',
+    signinHelpText: 'پاس ورڈ یا لاگ ان کی تفصیلات بھول گئے ہیں؟',
+    signupGetStarted: 'شروغ کریں',
+    signupAlreadyAccount: 'کیا آپ کا پہلے سے اکاؤنٹ ہے؟',
+    signupToggle: 'سائن ان کریں',
+    signupBtn: 'سائن اپ کریں',
+    signupTerms: 'سائن اپ کرکے، میں خدمات کی شرائط اور رازداری کی پالیسی سے متفق ہوں',
+    labelName: 'نام',
+    labelPassword: 'پاس ورڈ',
+    labelEmail: 'ای میل',
+    captchaPlaceholder: 'کیپچا درج کریں',
+    chooseRole: 'اپنی کردار منتخب کریں',
+    buyer: 'خریدار',
+    seller: 'فروخت کنندہ'
+}
+
+};
+
+   
+
+        function translatePage() {
+            const trans = translations[lang] || translations.en;
+            document.getElementById('ministry-heading').textContent = trans.ministryHeading;
+            document.getElementById('ministry-subheading').textContent = trans.ministrySubheading;
+            document.getElementById('signin-welcome').textContent = trans.signinWelcome;
+            document.getElementById('signin-register').textContent = trans.signinRegister;
+            document.getElementById('signin-toggle').textContent = trans.signinToggle;
+            document.getElementById('signin-btn').value = trans.signinBtn;
+            document.getElementById('signin-help-text').textContent = trans.signinHelpText;
+            document.getElementById('signup-get-started').textContent = trans.signupGetStarted;
+            document.getElementById('signup-already-account').textContent = trans.signupAlreadyAccount;
+            document.getElementById('signup-toggle').textContent = trans.signupToggle;
+            document.getElementById('signup-btn').value = trans.signupBtn;
+            document.getElementById('signup-terms').textContent = trans.signupTerms;
+            document.getElementById('label-name').textContent = trans.labelName;
+            document.getElementById('label-password').textContent = trans.labelPassword;
+            document.getElementById('label-email').textContent = trans.labelEmail;
+            document.querySelector('.captcha-input').placeholder = trans.captchaPlaceholder;
+        }
+
+        translatePage();  // Translate page content based on selected language
+    </script>
+</body>
+</html>
