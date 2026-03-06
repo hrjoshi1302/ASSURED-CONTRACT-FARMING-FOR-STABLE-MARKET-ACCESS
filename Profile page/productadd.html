@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Product</title>
+    <link rel="stylesheet" href="productadd.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Add New Product</h2>
+        <div class="form-group">
+            <label for="product-Name">Product Name</label>
+            <input type="text" id="product-Name" name="product-Name" placeholder="Enter Product Name">
+        </div>
+        <div class="form-group">
+            <label for="product-images">Product Images</label>
+            <div class="product-images">
+                <div class="image-upload">
+                    <label for="upload1">
+                        <div class="upload-placeholder">
+                            Click to upload or drag and drop (Image 1)
+                        </div>
+                    </label> 
+                    <input type="file" id="upload1" style="display: none;">
+                </div>
+                <div class="image-upload">
+                    <label for="upload2">
+                        <div class="upload-placeholder">
+                            Click to upload or drag and drop (Image 2)
+                        </div>
+                    </label>
+                    <input type="file" id="upload2" style="display: none;">
+                </div>
+                <div id="image1" class="image-thumbnail"></div>
+                <div id="image2" class="image-thumbnail"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Product Category</label>
+            <select id="category" name="category">
+                <option value="Fruits">Fruits</option>
+                <option value="Plantation Crops">Plantation Crops</option>
+                <option value="Oil Seeds">Oil Seeds</option>
+                <option value="Medicnal&ArometicPlants">Medicnal&ArometicPlants</option>
+                <option value="Beverge Crops">Beverge Crops</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Beans">Beans</option>
+                <option value="Spices">Spices</option>
+                <option value="Pulses">Pulses</option>
+                <option value="Fibers">Fibers</option>
+                <option value="Foriculture">Foriculture</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="Price">Price(in Rupees)</label>
+            <input type="text" id="price" name="price" placeholder="Enter Price">
+        </div>
+
+        <div class="form-group">
+            <label for="description">description</label>
+            <input type="text" id="description" name="description" placeholder="description will appear here"></textarea>
+        </div>
+
+                <!-- Shipping and Delivery Section -->
+                <div class="form-group">
+                    <label>Shipping and Delivery</label>
+                    <div class="shipping-delivery">
+                        <div class="shipping-item">
+                            <label for="weight">Item Weight (in Kg)</label>
+                            <input type="text" id="weight" name="weight" placeholder="Enter Weight">
+                        </div>
+
+                        <div class="shipping-item">
+                            <label>Package Size (in)</label>
+                            <input type="text" id="length" name="length" placeholder="Length">
+                            <input type="text" id="breadth" name="breadth" placeholder="Breadth">
+                            <input type="text" id="width" name="width" placeholder="Width">
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="form-group">
+                    <button class="save-btn">Save</button>
+                </div>
+        
+                </div>
+        
+
+
+    <script>
+        document.getElementById('upload1').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('image1').style.backgroundImage = 'url(' + e.target.result + ')';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('upload2').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('image2').style.backgroundImage = 'url(' + e.target.result + ')';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>

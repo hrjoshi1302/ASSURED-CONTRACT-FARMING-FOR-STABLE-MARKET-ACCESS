@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: auto; /* Adjust height to fit content */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.product-images {
+    display: flex;
+    gap: 15px;
+}
+
+.image-upload {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    flex: 1;
+    position: relative;
+}
+
+.upload-placeholder {
+    color: #aaa;
+}
+
+.image-thumbnail {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+    background-size: cover;
+    background-position: center;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.shipping-delivery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.shipping-item {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    gap: 10px;
+}
+
+.shipping-item label {  
+    font-weight: bold;
+}
+
+.shipping-item input {  
+    /* width:calc(100% /3-10px);
+    display: inline-block; */
+    width: 100px;
+}
+
+
+.save-btn {
+    display: block;
+    width: 100%;
+    padding: 16px 30px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.save-btn:hover {
+    background-color:rgb(0,0,0);
+    color: rgb(255,255,255);
+    box-shadow: 11px 10px 50px rgb(52,52,5);
+}
