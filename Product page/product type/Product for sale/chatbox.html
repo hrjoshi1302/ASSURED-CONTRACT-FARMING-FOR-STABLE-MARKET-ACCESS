@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Chatbox Prototype</title>
+    <link rel="stylesheet" href="chatbox.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Messages</h3>
+            </div>
+            <div class="sidebar-chats">
+                <div class="chat-item active">
+                    <div class="chat-profile-pic"></div>
+                    <div class="chat-details">
+                        <h4>Arash Ghanavati</h4>
+                        <p>Need a buyer for my crop this season</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chatbox">
+            <div class="header">
+                <div class="profile-info">
+                    <div class="profile-pic"></div>
+                    <div class="profile-name">
+                        <h3>Arash Ghanavati</h3>
+                        <p>Need a buyer for my crop this season</p>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="video-call"><img src="c:\Users\ADMIN\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\9461CCE28EBE3E76FB4B931C35A169B0\WhatsApp Image 2024-08-29 at 17.10.11_8cf83cf7.jpg" alt=""><source>
+                    </img></button>
+                    <button class="call">&#128379;</button>
+                    <button class="more-options">⋮</button>
+                </div>
+            </div>
+
+            <div class="messages-section">
+                <div class="message received">
+                    <div class="message-content">
+                        <p>Dear Buyer, I have quality crop ready for this season and am looking for a reliable contract.</p>
+                    </div>
+                </div>
+                <div class="message sent">
+                    <div class="message-content">
+                        <p>Please share quantity, quality details, and expected price.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <div class="input-toolkit">
+                    <button class="attach-file">📎</button>
+                    <button class="attach-contract">📄</button>
+                    <button class="speak-btn"><img src="C:\Users\ADMIN\Downloads\mic.png">
+                    </img></button>
+                </div>
+                <input type="text" placeholder="Send a message..." class="message-input">
+                <button class="send-btn">Send</button>
+            </div>
+        </div>
+
+        <!-- Right Sidebar (e.g., for proposal details) -->
+        <div class="right-sidebar">
+            <div class="proposal-details">
+                <h4>Activity Timeline</h4>
+                <div class="timeline">
+                    <div class="timeline-event">
+                        <div class="timeline-icon">📅</div>
+                        <div class="timeline-details">
+                            <p>Proposal submitted</p>
+                            <span>July 26</span>
+                        </div>
+                    </div>
+                    <div class="timeline-event">
+                        <div class="timeline-icon">📑</div>
+                        <div class="timeline-details">
+                            <p>Contract offer</p>
+                            <span>Awaiting offer from client</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="accept-contract">Accept contract</button>
+            </div>
+            <div class="contract-files">
+                <h4>Contract Files</h4>
+                <div id="file-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="chatbox.js"></script>
+</body>
+</html>

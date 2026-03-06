@@ -1,0 +1,271 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 80%;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar, .right-sidebar {
+    width: 20%;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+
+.sidebar-chats {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.chat-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.chat-item.active {
+    background-color: #d1e7ff;
+}
+
+.chat-profile-pic {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat-details h4 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.chat-details p {
+    margin: 0;
+    font-size: 12px;
+    color: #888;
+}
+
+.chatbox {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ddd;
+}
+
+.header {
+    background-color: #f8f8f8;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-name h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.profile-name p {
+    margin: 0;
+    font-size: 12px;
+    color: #888;
+}
+
+.actions button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.actions img{
+    width: 15px;
+    height: 20px;
+    padding-top: 8px;
+}
+
+.messages-section {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+
+.message {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.message.received {
+    justify-content: flex-start;
+}
+
+.message.received .message-content {
+    background-color: #f1f1f1;
+    padding: 8px 12px;
+    border-radius: 10px 10px 10px 0;
+    max-width: 75%;
+}
+
+.message.sent {
+    justify-content: flex-end;
+}
+
+.message.sent .message-content {
+    background-color: #d1e7ff;
+    padding: 8px 12px;
+    border-radius: 10px 10px 0 10px;
+    max-width: 75%;
+}
+
+.input-section {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f8f8f8;
+    align-items: center;
+}
+
+.input-toolkit {
+    display: flex;
+    align-items: center;
+}
+
+.input-toolkit button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.input-toolkit img{
+    width: 20px;
+    height: 20px;
+    padding-top: 3px;
+}
+
+.message-input {
+    flex-grow: 1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.send-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.right-sidebar {
+    padding: 20px;
+}
+
+.proposal-details {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.proposal-details h4 {
+    margin-bottom: 15px;
+}
+
+.timeline {
+    margin-bottom: 20px;
+}
+
+.timeline-event {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.timeline-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #4CAF50;
+}
+
+.timeline-details {
+    font-size: 14px;
+}
+
+.timeline-details p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.timeline-details span {
+    font-size: 12px;
+    color: #888;
+}
+
+.accept-contract {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.contract-files h4 {
+    margin-bottom: 15px;
+}
+
+#file-list {
+    font-size: 14px;
+    color: #555;
+}
