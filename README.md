@@ -139,6 +139,7 @@ Home
 
 ## Project Structure
 
+```bash
 MAIN/
 │
 ├── Language page/
