@@ -55,13 +55,13 @@ A **digital marketplace ecosystem** that provides:
 Language Selection → Role Selection → Login → Home Dashboard
 
 After login:
-
+```bash
 Home  
 ├── Product Listing  
 ├── Market Price  
 ├── News  
 └── Profile   
-
+```
 ---
 
 ## Preview
@@ -153,7 +153,7 @@ MAIN/
 ├── Selection of market price product/
 │
 └── README.md
-
+```
 ---
 
 ## Expected Impact
