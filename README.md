@@ -1,133 +1,183 @@
-
-
-# Assured Contract Farming for Stable Market Access
-
+# Assured Contract Farming Platform  
 ### Transforming Agriculture Through Technology
+
+---
 
 ## Project Overview
 
-This project focuses on solving major challenges faced by Indian farmers by building a technology-driven platform for **assured contract farming and stable market access**.
+This project addresses key challenges faced by Indian farmers by building a **technology-driven platform for assured contract farming and stable market access**.
 
-The platform acts as an e-commerce–style marketplace where farmers can securely connect with buyers, establish transparent contracts, access real-time market information, and receive timely payments.
+The platform works like an **agriculture-focused digital marketplace**, enabling farmers to:
+- Connect directly with buyers  
+- Create secure and transparent contracts  
+- Access real-time market insights  
+- Receive timely and fair payments  
 
-The goal of this project is to empower farmers with digital tools that improve income stability, reduce exploitation, and promote sustainable agricultural practices across India. 
+The goal is to improve income stability, reduce exploitation, and promote sustainable agricultural practices.
 
 ---
 
-# Problem Statement
+## Problem Statement
 
-### Assured Contract Farming System for Stable Market Access
-
-Indian farmers often struggle with market instability and lack of transparency. This leads to unpredictable income and financial insecurity.
+Indian farmers face multiple structural challenges:
 
 ### Key Challenges
 
-**1. Market Access Uncertainty**
-Farmers frequently face fluctuating prices and unpredictable demand.
-
-**2. Exploitation Risks**
-Lack of transparency in traditional markets such as APMC makes farmers vulnerable to unfair pricing.
-
-**3. Payment Delays**
-Farmers often experience delayed payments or unfair financial agreements.
-
-**4. Lack of Awareness**
-Many farmers lack knowledge about market trends, legal rights, and contract farming opportunities.
-
-**5. Small Farmer Vulnerability**
-Small-scale farmers often lack bargaining power and access to reliable buyers.
+- 📉 Market Access Uncertainty  
+- ⚠️ Exploitation Risks in traditional markets  
+- ⏳ Payment Delays  
+- 📚 Lack of Awareness  
+- 🤝 Small Farmer Vulnerability  
 
 ---
 
-# Objective
+## Objective
 
-To design and develop a **digital platform that enables secure and transparent contract farming agreements**, helping farmers connect directly with buyers and ensuring stable and predictable income.
-
----
-
-# Proposed Solution
-
-### Digital Marketplace for Farmers and Buyers
-
-The platform provides a transparent and reliable ecosystem where farmers can engage in contract farming agreements while accessing fair market opportunities.
+To build a **secure and transparent digital platform** that:
+- Connects farmers with buyers  
+- Enables contract-based agreements  
+- Ensures stable and predictable income  
 
 ---
 
-# Key Features
+## Proposed Solution
 
-### 1. Assured Contract Farming System
-
-* Digital contracts between farmers and buyers
-* Clearly defined pricing, quantity, and delivery terms
-* Reduced market uncertainty
-
-### 2. Transparent Marketplace
-
-* Real-time crop pricing information
-* Verified buyer profiles
-* Improved transparency in agricultural trade
-
-### 3. Secure Payment System
-
-* Escrow-based payment mechanism
-* Multiple payment methods
-* Ensures timely and fair payments to farmers
-
-### 4. Farmer Education Resources
-
-* Articles and videos explaining modern farming practices
-* Awareness about market trends and farmer rights
-* Tools to help farmers make informed decisions
-
-### 5. Support for Small Farmers
-
-* Group selling features
-* Cooperative formation tools
-* Improved bargaining power
-
-### 6. Government Integration & Compliance
-
-The platform aligns with major Indian digital agriculture initiatives:
-
-* **DigiLocker Integration** – secure identity verification
-* **eNAM Integration** – unified agricultural marketplace
-* **Contract Farming Act, 2020 Compliance** – legally structured agreements
-* **Agri-Stack Support** – leveraging digital farmer databases
-* **Digital Agriculture Mission** – supporting modern farming technologies
+A **digital marketplace ecosystem** that provides:
+- Transparent pricing  
+- Verified users  
+- Secure contracts  
+- Reliable communication  
 
 ---
 
-# Expected Impact
+## Platform Flow
 
-### Farmer Empowerment
+Language Selection → Role Selection → Login → Home Dashboard
 
-Provides farmers with better market access and fair pricing.
+After login:
 
-### Reduced Exploitation
+Home  
+├── Product Listing  
+├── Market Price  
+├── News (More)  
+└── Profile (More)  
 
-Transparent contracts and verified buyers improve trust in the system.
+---
 
-### Stronger Rural Economy
+## Preview
 
-Stable incomes support rural economic development.
+### Home Page
+![Home](./Home_page.png)
+
+---
+
+### Language, Role & Login Flow
+![Auth Flow](./language-role-login-flow.png)
+
+---
+
+### Market Price & News Section
+![Market & News](./market-price-news-section.png)
+
+---
+
+### Product Listing & Communication
+![Product & Communication](./marketplace-interaction-dashboard.png)
+
+---
+
+## Screens Covered
+
+- 🌐 Language Selection  
+- 👤 Role Selection  
+- 🔐 Login System  
+- 🏠 Home Dashboard  
+- 🛒 Product Marketplace  
+- 📊 Market Price Analysis  
+- 📰 News Section  
+- 💬 Messaging System  
+- 👤 Profile  
+
+---
+
+## Key Features
+
+### Assured Contract Farming
+- Digital agreements  
+- Defined pricing & quantity  
+- Reduced uncertainty  
+
+### Transparent Marketplace
+- Real-time pricing  
+- Verified buyers  
+- Fair trade system  
+
+### Secure Payment System
+- Escrow-based payments  
+- Multiple payment methods  
+- Timely transactions  
+
+### Farmer Education
+- Informational content  
+- Awareness tools  
+- Decision support  
 
 ### Support for Small Farmers
+- Group selling  
+- Cooperative tools  
+- Increased bargaining power  
 
-Collective selling mechanisms improve bargaining power.
+### Government Integration
 
-### Sustainable Agricultural Growth
-
-Encourages structured and reliable agricultural trade practices.
+- DigiLocker  
+- eNAM  
+- Contract Farming Act  
+- Agri-Stack  
+- Digital Agriculture Mission  
 
 ---
 
-# Conclusion
+## Project Structure
 
-This project aims to build a **fair, transparent, and technology-driven agricultural marketplace** that strengthens the connection between farmers and buyers.
+PROJECT SEM6 MAIN/
+│
+├── Language page/  
+├── Choose role page/  
+├── Log in page/  
+├── Home page/  
+├── Product page/  
+├── Market Price Page/  
+├── News page/  
+├── Profile page/  
+├── Selection of market price product/  
+└── README.md  
 
-By leveraging digital infrastructure and government initiatives, the platform can significantly improve income stability for farmers and contribute to the modernization of India's agricultural ecosystem.
+---
 
+## Expected Impact
 
+- Improved farmer income stability  
+- Reduced exploitation  
+- Transparent agricultural ecosystem  
+- Stronger rural economy  
+- Support for small farmers  
 
-That will make it look like a **serious portfolio project instead of a college submission.**
+---
 
+## Technologies Used
+
+- HTML  
+- CSS  
+- JavaScript  
+
+---
+
+## Conclusion
+
+This project builds a **fair, transparent, and technology-driven agricultural marketplace** that strengthens the connection between farmers and buyers.
+
+---
+
+## Author
+
+**Himal Joshi**
