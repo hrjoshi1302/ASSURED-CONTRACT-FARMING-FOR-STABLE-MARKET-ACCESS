@@ -140,7 +140,7 @@ Home
 ## Project Structure
 
 PROJECT SEM6 MAIN/
-│
+
 ├── Language page/  
 ├── Choose role page/  
 ├── Log in page/  
