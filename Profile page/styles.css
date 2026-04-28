@@ -11,7 +11,7 @@ body {
     background: #e0dfdf;
     padding: 39px;
     border-radius: 35px;
-    box-shadow:2px 2px 20px rgba(98, 98, 98, 0.5);
+    box-shadow: 2px 2px 20px rgba(98, 98, 98, 0.5);
 }
 
 /* Profile Section */
@@ -48,16 +48,20 @@ body {
     color: white;
     border: none;
     cursor: pointer;
-	margin: 20px auto; /* Center the button horizontally within its container */
-    padding: 17px 16px; /* Padding top and bottom is 8px, left and right is 16px */
-    border-radius: 20px; /* Consistent border-radius */
+    margin: 20px auto;
+    /* Center the button horizontally within its container */
+    padding: 17px 16px;
+    /* Padding top and bottom is 8px, left and right is 16px */
+    border-radius: 20px;
+    /* Consistent border-radius */
     font-size: 16px;
-    text-align: center; /* Center text inside the button */
+    text-align: center;
+    /* Center text inside the button */
 }
 
 /* Order History Section */
 .order-history-section h2 {
-	
+
     margin-bottom: 20px;
 }
 
@@ -67,7 +71,8 @@ body {
     margin-bottom: 40px;
 }
 
-.order-history-section th, td {
+.order-history-section th,
+td {
     padding: 15px;
     border-bottom: 1px solid #ddd;
     text-align: left;
@@ -112,6 +117,8 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    text-decoration: underline black;
+
 }
 
 /* Notifications Section */
@@ -155,23 +162,32 @@ body {
     color: white;
     border: none;
     cursor: pointer;
-	margin: 20px auto; /* Center the button horizontally within its container */
-    padding: 17px 16px; /* Padding top and bottom is 8px, left and right is 16px */
-    border-radius: 20px; /* Consistent border-radius */
+    margin: 20px auto;
+    /* Center the button horizontally within its container */
+    padding: 17px 16px;
+    /* Padding top and bottom is 8px, left and right is 16px */
+    border-radius: 20px;
+    /* Consistent border-radius */
     font-size: 16px;
-    text-align: center; /* Center text inside the button */
+    text-align: center;
+    /* Center text inside the button */
 }
+
 .payment-btn {
     padding: 10px 15px;
     background-color: black;
     color: white;
     border: none;
     cursor: pointer;
-	margin: 20px auto; /* Center the button horizontally within its container */
-    padding: 17px 16px; /* Padding top and bottom is 8px, left and right is 16px */
-    border-radius: 20px; /* Consistent border-radius */
+    margin: 20px auto;
+    /* Center the button horizontally within its container */
+    padding: 17px 16px;
+    /* Padding top and bottom is 8px, left and right is 16px */
+    border-radius: 20px;
+    /* Consistent border-radius */
     font-size: 16px;
-    text-align: center; /* Center text inside the button */
+    text-align: center;
+    /* Center text inside the button */
 }
 
 /* Account Settings Section */
@@ -185,11 +201,15 @@ body {
     color: white;
     border: none;
     cursor: pointer;
-	margin: 20px auto; /* Center the button horizontally within its container */
-    padding: 17px 16px; /* Padding top and bottom is 8px, left and right is 16px */
-    border-radius: 20px; /* Consistent border-radius */
+    margin: 20px auto;
+    /* Center the button horizontally within its container */
+    padding: 17px 16px;
+    /* Padding top and bottom is 8px, left and right is 16px */
+    border-radius: 20px;
+    /* Consistent border-radius */
     font-size: 16px;
-    text-align: center; /* Center text inside the button */
+    text-align: center;
+    /* Center text inside the button */
 }
 
 .form-group {
@@ -213,6 +233,7 @@ input[type="file"] {
     border: 1px solid #ddd;
     border-radius: 4px;
 }
+
 button[type="submit"] {
     width: 100%;
     padding: 10px;
@@ -221,11 +242,11 @@ button[type="submit"] {
     border-radius: 4px;
 
     font-size: 16px;
-	
+
 }
 
 button[type="submit"]:hover {
-	background-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
     box-shadow: 11px 10px 50px rgb(52, 52, 52);
 }
@@ -279,7 +300,8 @@ button[type="submit"]:hover {
     margin-top: 10px;
 }
 
-.add-payment-form input, .add-payment-form select {
+.add-payment-form input,
+.add-payment-form select {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;

@@ -12,7 +12,8 @@ body {
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: auto; /* Adjust height to fit content */
+    height: auto;
+    /* Adjust height to fit content */
 }
 
 h2 {
@@ -90,11 +91,11 @@ select {
     gap: 10px;
 }
 
-.shipping-item label {  
+.shipping-item label {
     font-weight: bold;
 }
 
-.shipping-item input {  
+.shipping-item input {
     /* width:calc(100% /3-10px);
     display: inline-block; */
     width: 100px;
@@ -115,7 +116,7 @@ select {
 }
 
 .save-btn:hover {
-    background-color:rgb(0,0,0);
-    color: rgb(255,255,255);
-    box-shadow: 11px 10px 50px rgb(52,52,5);
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    box-shadow: 11px 10px 50px rgb(52, 52, 5);
 }

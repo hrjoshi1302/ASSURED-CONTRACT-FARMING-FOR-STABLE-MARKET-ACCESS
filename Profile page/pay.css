@@ -14,18 +14,22 @@ body {
 
 /* Container for the entire content */
 .container {
-    max-width: 600px; /* Increased width */
+    max-width: 600px;
+    /* Increased width */
     margin: 0 auto;
     background-color: #e0dfdf;
-    padding: 40px; /* Increased padding */
-    border-radius: 40px; /* Higher border-radius */
+    padding: 40px;
+    /* Increased padding */
+    border-radius: 40px;
+    /* Higher border-radius */
     box-shadow: 2px 2px 20px rgba(98, 98, 98, 0.5);
 }
 
 /* Header styling */
 h2 {
     text-align: center;
-    margin-bottom: 40px; /* Adjusted margin */
+    margin-bottom: 40px;
+    /* Adjusted margin */
     color: #000000;
 }
 
@@ -40,10 +44,13 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px; /* Increased padding */
+    padding: 15px;
+    /* Increased padding */
     background-color: #f9f9f9;
-    border-radius: 8px; /* Higher border-radius */
-    margin-bottom: 15px; /* Adjusted margin */
+    border-radius: 8px;
+    /* Higher border-radius */
+    margin-bottom: 15px;
+    /* Adjusted margin */
 }
 
 /* Button styling */
@@ -67,17 +74,23 @@ button {
 
 .add-payment-btn {
     display: block;
-    width: 50%; /* Button width is 50% of the container width */
+    width: 50%;
+    /* Button width is 50% of the container width */
     background-color: #ffffff;
     color: #000000;
-    margin: 20px auto; /* Center the button horizontally within its container */
-    padding: 17px 16px; /* Padding top and bottom is 8px, left and right is 16px */
-    border-radius: 20px; /* Consistent border-radius */
+    margin: 20px auto;
+    /* Center the button horizontally within its container */
+    padding: 17px 16px;
+    /* Padding top and bottom is 8px, left and right is 16px */
+    border-radius: 20px;
+    /* Consistent border-radius */
     border: none;
     cursor: pointer;
     font-size: 16px;
-    text-align: center; /* Center text inside the button */
-    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    text-align: center;
+    /* Center text inside the button */
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effect */
 }
 
 .add-payment-btn:hover {
@@ -93,21 +106,28 @@ button {
 
 .form-group {
     position: relative;
-    margin-bottom: 20px; /* Increased margin */
+    margin-bottom: 20px;
+    /* Increased margin */
     text-align: left;
 }
 
-input[type="text"], select {
-    width: 100%; /* Full width for better appearance */
-    padding: 14px 20px; /* Increased padding */
+input[type="text"],
+select {
+    width: 100%;
+    /* Full width for better appearance */
+    padding: 14px 20px;
+    /* Increased padding */
     border: 1px solid #ffffff;
-    border-radius: 12px; /* Higher border-radius */
+    border-radius: 12px;
+    /* Higher border-radius */
     font-size: 16px;
     margin-bottom: 10px;
-    background: #ffffff; /* Pure white color */
+    background: #ffffff;
+    /* Pure white color */
 }
 
-input:hover[type="text"], select:hover {
+input:hover[type="text"],
+select:hover {
     border: 1px solid #c0c0c0;
 }
 
@@ -123,19 +143,23 @@ label {
     transition: all 0.3s ease;
 }
 
-input:focus + label, input:not(:placeholder-shown) + label, select:focus + label {
+input:focus+label,
+input:not(:placeholder-shown)+label,
+select:focus+label {
     top: -10px;
     left: 10px;
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
     outline: none;
     border-color: #ffffff;
 }
 
 .button-container {
     text-align: center;
-    margin-top: 30px; /* Distance from input elements to button */
+    margin-top: 30px;
+    /* Distance from input elements to button */
 }
 
 button[type="submit"] {
@@ -161,5 +185,3 @@ button[type="submit"]:hover {
     font-size: 14px;
     margin-top: 5px;
 }
-
-

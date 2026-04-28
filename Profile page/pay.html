@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Methods</title>
     <link rel="stylesheet" href="pay.css">
 </head>
+
 <body>
     <div class="container">
         <h2>Payment Methods</h2>
@@ -14,15 +16,15 @@
         </ul>
         <button class="add-payment-btn" onclick="window.location.href='add-payment.html'">Add Payment Method</button>
     </div>
-    
+
     <script>
         // Function to load payment methods from local storage
         function loadPaymentMethods() {
             var paymentList = document.getElementById('payment-methods-list');
             var paymentMethods = JSON.parse(localStorage.getItem('paymentMethods')) || [];
-            
+
             paymentList.innerHTML = ''; // Clear existing list
-            paymentMethods.forEach(function(method) {
+            paymentMethods.forEach(function (method) {
                 var newPaymentMethod = document.createElement('li');
                 newPaymentMethod.innerHTML = `
                     <span>${method}</span>
@@ -49,4 +51,5 @@
         window.onload = loadPaymentMethods;
     </script>
 </body>
+
 </html>

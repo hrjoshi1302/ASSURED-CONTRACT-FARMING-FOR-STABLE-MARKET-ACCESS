@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Price</title>
+
+<link rel="stylesheet" href="market_price_page.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+body{
+font-family:Georgia,'Times New Roman',Times,serif;
+margin:0;
+background:#f5f5f5;
+}
+
+/* NAVBAR */
+
+.breadcrumb{
+display:flex;
+align-items:center;
+list-style:none;
+background:#f8f9fa;
+padding:30px;
+width:100%;
+height:40px;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+margin-top: -10px;
+}
+
+.breadcrumb-item{
+margin-left:70px;
+}
+
+.breadcrumb-item a{
+text-decoration:none;
+color:#9b9b9b;
+}
+
+.breadcrumb-item a:hover{
+color:#000;
+}
+
+/* SEARCH */
+
+.search-form{
+display:flex;
+align-items:center;
+margin-left:70px;
+margin-top:10px;
+position:relative;
+}
+
+.search-input{
+border:1px solid #ced4da;
+border-radius:20px;
+padding:10px 15px;
+width:300px;
+font-size:16px;
+}
+
+.search-icon{
+position:absolute;
+right:10px;
+border:none;
+background:none;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+
+<li class="breadcrumb-item">
+<a href="../Home page/homepage_f.html">Home</a>
+</li>
+
+<form class="search-form" action="search_results.html" method="GET">
+<input class="search-input" type="search" name="query" placeholder="Search...">
+<button class="search-icon" type="submit">🔍</button>
+</form>
+
+<li id="google_translate_element"></li>
+
+</ol>
+</nav>
+
+
+<div class="price-container">
+
+<h1 class="product-name">Apple</h1>
+
+<p class="current-price">₹14000 / Quintal [100kg]</p>
+
+<div class="graph_contols_container">
+
+<div class="graph-box">
+<canvas id="chart"></canvas>
+</div>
+
+<div class="graph-controls">
+<button onclick="setRange(1)">1 Day</button>
+<button onclick="setRange(7)">1 Week</button>
+<button onclick="setRange(30)">1 Month</button>
+<button onclick="setRange(180)">6 Months</button>
+<button onclick="setRange(365)">1 Year</button>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const labels=[];
+const prices=[];
+
+const dayNames=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+
+/* -------- YEAR DATA -------- */
+
+let today=new Date();
+let start=new Date();
+
+start.setFullYear(start.getFullYear()-1);
+
+let basePrice=14750;
+
+while(start<=today){
+
+if(start.getDay()!==0){
+
+let label=start.toLocaleDateString("en-IN",{month:"short",day:"numeric"});
+labels.push(label);
+
+/* daily fluctuation */
+basePrice += (Math.random()*150 - 75);
+
+/* correction toward average */
+basePrice += (14750 - basePrice) * 0.03;
+
+/* occasional market spike */
+if(Math.random() < 0.03){
+basePrice += (Math.random()*400 - 200);
+}
+
+/* limit range */
+basePrice = Math.max(13500, Math.min(16000, basePrice));
+
+prices.push(Number(basePrice.toFixed(2)));
+
+}
+
+start.setDate(start.getDate()+1);
+
+}
+
+
+/* -------- 1 DAY DATA -------- */
+
+const hourLabels=[];
+const hourPrices=[];
+
+let intradayPrice = basePrice;
+
+for(let h=6;h<=19;h++){
+
+hourLabels.push(h+":00");
+
+intradayPrice += (Math.random()*80 - 40);
+
+intradayPrice = Math.max(13600, Math.min(15800, intradayPrice));
+
+hourPrices.push(Number(intradayPrice.toFixed(2)));
+
+}
+
+
+/* -------- 1 WEEK DATA -------- */
+
+const weekLabels=[];
+const weekPrices=[];
+
+let weekPrice = basePrice;
+
+for(let i=6;i>=0;i--){
+
+let temp=new Date();
+temp.setDate(today.getDate()-i);
+
+weekLabels.push(dayNames[temp.getDay()]);
+
+weekPrice += (Math.random()*200 - 100);
+
+weekPrice = Math.max(13500, Math.min(16000, weekPrice));
+
+weekPrices.push(Number(weekPrice.toFixed(2)));
+
+}
+
+
+/* -------- CHART -------- */
+
+const ctx=document.getElementById("chart");
+
+const chart=new Chart(ctx,{
+type:"line",
+
+data:{
+labels:labels,
+datasets:[
+{
+label:"Price",
+data:prices,
+borderColor:"#2e7d32",
+backgroundColor:"transparent",
+borderWidth:3,
+pointRadius:0,
+tension:0.35
+}
+]
+},
+
+options:{
+responsive:true,
+
+interaction:{
+mode:'index',
+intersect:false
+},
+
+plugins:{
+legend:{display:false},
+
+tooltip:{
+mode:'index',
+intersect:false,
+callbacks:{
+label:function(context){
+return "₹ " + context.parsed.y;
+}
+}
+}
+},
+
+scales:{
+x:{
+grid:{color:"#ddd"},
+ticks:{font:{size:14}}
+},
+
+y:{
+grid:{color:"#ddd"},
+ticks:{font:{size:14}},
+title:{
+display:true,
+text:"Price (₹ / Quintal)",
+font:{size:16}
+}
+}
+}
+}
+});
+
+
+/* -------- BUTTON FUNCTION -------- */
+
+function setRange(days){
+
+if(days===1){
+
+chart.data.labels=hourLabels;
+chart.data.datasets[0].data=hourPrices;
+
+}
+
+else if(days===7){
+
+chart.data.labels=weekLabels;
+chart.data.datasets[0].data=weekPrices;
+
+}
+
+else{
+
+chart.data.labels=labels.slice(-days);
+chart.data.datasets[0].data=prices.slice(-days);
+
+}
+
+chart.update();
+
+}
+
+setRange(180);
+
+</script>
+
+</body>
+</html>

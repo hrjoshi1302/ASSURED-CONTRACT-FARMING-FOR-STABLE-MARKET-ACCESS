@@ -1,0 +1,381 @@
+/* RESET */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER STRUCTURE */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LEFT LOGO + TEXT */
+
+.header {
+    display: flex;
+    margin: 1.5%;
+}
+
+.header img {
+    width: 50px;
+    height: 60px;
+    margin-top: 2%;
+}
+
+.header h3 {
+    margin-top: 6%;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* NAVBAR */
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 40px;
+}
+
+nav ul li {
+    position: relative;
+    margin-top: 24px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(93, 93, 93);
+}
+
+/* NAV LINK STYLE */
+
+.txttop {
+    color: rgb(109, 109, 109);
+    font-weight: 100;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-size: 18px;
+}
+
+.ttop {
+    color: rgb(109, 109, 109);
+    font-weight: 100;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-size: 18px;
+}
+
+/* HOVER EFFECT */
+
+.txttop:hover,
+.ttop:hover {
+    color: black;
+    font-weight: 500;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    transition: all 0.6s;
+}
+
+/* DROPDOWN */
+
+nav ul li .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    min-width: 150px;
+    font-size: 15px;
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+/* DROPDOWN LINKS */
+
+#dt {
+    color: rgb(109, 109, 109);
+    font-weight: 100;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    transition: all 0.2s;
+}
+
+#dt:hover {
+    color: black;
+    font-weight: 500;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    transition: all 0.3s;
+}
+
+/* PROFILE IMAGE */
+
+.user-pic {
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+/* MAIN LAYOUT */
+
+.container {
+    display: flex;
+    width: 85%;
+    margin: auto;
+    margin-top: 25px;
+    gap: 25px;
+}
+
+/* NEWS SECTION */
+
+.news-section {
+    flex: 3;
+}
+
+/* FILTER BUTTONS */
+
+.filters {
+    margin-bottom: 15px;
+}
+
+.filters button {
+    padding: 6px 14px;
+    margin-right: 8px;
+    border: none;
+    background: #2e7d32;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.filters button:hover {
+    background: #1b5e20;
+}
+
+/* NEWS CARD */
+
+.news-card {
+    display: flex;
+    background: white;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: 0.3s all;
+}
+
+.news-card:hover{
+    transition: 0.5s all;
+    margin-bottom: 22px;
+    
+}
+
+.news-card img {
+    width: 200px;
+    height: 140px;
+    object-fit: cover;
+}
+
+/* NEWS TEXT */
+
+.news-content {
+    padding: 16px;
+}
+
+.news-content h3 {
+    margin: 1px;
+    font-size: 19px;
+    color: #222;
+}
+
+.news-content p {
+    font-size: 16px;
+    margin: 8px 4px;
+    color: #444;
+}
+
+.news-content span {
+    font-size: 14px;
+    color: gray;
+    margin: 10px 4px;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    flex: 1;
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    transition: 0.3s all;
+}
+
+.sidebar h2:hover {
+    font-size: 20.5px;
+    margin-bottom: 17px;
+    transition: 0.5s all;
+}
+
+/* SIDEBAR CARDS */
+
+.side-card {
+    background: white;
+    padding: 10px;
+    margin-bottom: 13px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s all;
+}
+
+
+.side-card:hover {
+    padding: 12px;
+    margin-bottom: 14px;
+    transition: 0.5s all;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+nav ul li .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    min-width: 150px;
+    color: rgb(109, 109, 109);
+    font-weight: 100;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+    transition: all 0.3s;
+    font-size: 15px;
+}
+
+nav ul li:hover .dropdown {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    min-width: 150px;
+    color: black;
+    font-weight: 100;
+    transition: all 0.6s;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+}
+
+/* Style the translate button */
+#google_translate_element .goog-te-gadget-simple {
+    background: linear-gradient(135deg, #38ef7d, #11998e);
+    padding: 8px 7px !important;
+    border-radius: 7px !important;
+    border: none !important;
+    font-size: 14px !important;
+    transition: 0.4s all;
+    font-weight: 550;
+    cursor: pointer;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+#google_translate_element:hover .goog-te-gadget-simple {
+    background: linear-gradient(135deg, #38ef7d, #11998e);
+    padding: 9px 8px !important;
+    border-radius: 8px !important;
+    border: none !important;
+    font-size: 14px !important;
+    transition: 0.3s all;
+    font-weight: 580;
+    letter-spacing: 1.5px;
+    word-spacing: 2.5px;
+    cursor: pointer;
+}
+
+/* Style the text inside */
+#google_translate_element .goog-te-gadget-simple span {
+    color: #003046 !important;
+}
+
+/* Remove google icon */
+#google_translate_element .goog-te-gadget-icon {
+    display: none !important;
+}
+
+/* Hide google branding */
+.goog-logo-link {
+    display: none !important;
+}
+
+.goog-te-gadget {
+    color: transparent !important;
+}
+
+/* Remove border around widget */
+.goog-te-gadget-simple {
+    border: none !important;
+}
+
+/* Style the dropdown select */
+.goog-te-combo {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: linear-gradient(135deg, #38ef7d, #11998e);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    appearance: none;
+    /* removes default arrow in some browsers */
+}
+
+/* Optional: add hover effect */
+.goog-te-combo:hover {
+    background: linear-gradient(135deg, #34c97e, #0f8e7c);
+}
+
+/* Optional: add custom arrow */
+.goog-te-combo::-ms-expand {
+    display: none;
+}
+
+/* IE */

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Market price page </title>
+  <link rel="stylesheet" href="selection_of_product_for_price.css">
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,as,bn,kn,gu,ml,mr,or,pa,ta,te,ur,mni,ks,doi',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <style>
+    .breadcrumb {
+      display: flex;
+      list-style: none;
+      background-color: #f8f9fa;
+      padding: 30px;
+      position: fixed;
+      /* Make the navigation fixed */
+      top: 0;
+      /* Stick it to the top */
+      left: 0;
+      width: 100%;
+      /* Full width of the page */
+      z-index: 1000;
+      /* Ensure it's on top of other elements */
+      margin-top: 0;
+      /* Adjust if needed */
+      margin-left: 0;
+      /* Adjust to start from the left edge */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      /* Optional: add a subtle shadow */
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .breadcrumb-item {
+      margin-left: 70px;
+      margin-top: 1.18%;
+    }
+
+    .breadcrumb-item a {
+      text-decoration: none;
+      color: #9b9b9b;
+    }
+
+    .breadcrumb-item a:hover {
+      color: #000000;
+      transition: all 0.6s;
+    }
+
+    .search-form {
+      display: flex;
+      align-items: center;
+      margin-left: 70px;
+    }
+
+    .search-input {
+      border: 1px solid #ced4da;
+      border-radius: 20px;
+      padding: 10px 15px;
+      width: 300px;
+      /* Adjust width as needed */
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+      margin-right: 60px;
+    }
+
+    .search-input:focus {
+      border-color: #80bdff;
+      outline: none;
+    }
+
+    .search-icon {
+      border: none;
+      background: none;
+      padding: 10px;
+      margin-left: -49px;
+      /* Adjust this value based on the size of the icon and the padding */
+      cursor: pointer;
+    }
+
+    .search-icon i {
+      font-size: 20px;
+      /* Adjust size of the icon */
+      color: #007bff;
+      /* Color of the icon */
+    }
+
+    .search-icon:hover i {
+      color: #ffffff;
+      /* Darker shade on hover */
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../Home page/homepage_f.html">Home</a></li>
+ <form class="search-form" onsubmit="searchCrop(event)">
+  <input class="search-input" id="searchBox" type="search" placeholder="Search crops..." autocomplete="off">
+  <button class="search-icon" type="submit">🔍</button>
+  <div id="suggestions"></div>
+</form>
+        
+        <!-- Google Translate Dropdown -->
+        <li id="google_translate_element"></li>
+      </ol>
+    </nav>
+  </header>
+
+  <div class="dashboard_body">
+
+    <section class="recent-section">
+
+      <div class="h2_decor">
+        <h2>Recently</h2>
+        <h2> Viewed</h2>
+      </div>
+
+      <div class="recent-container">
+
+        <a href="../Market Price Page/market_price_page.html" class="recent-card">
+          <p>Tomato</p>
+          <img src="tomato.jpeg" alt="Tomato">
+          <span class="details-btn">More Details</span>
+        </a>
+
+        <a href="../Market Price Page/graph_oninon.html" class="recent-card">
+          <p>Onion</p>
+          <img src="onion.jpeg" alt="Onion">
+          <span class="details-btn">More Details</span>
+        </a>
+
+        <a href="../Market Price Page/graph_wheat.html" class="recent-card">
+          <p>Wheat</p>
+          <img src="wheat.jpeg" alt="Wheat">
+          <span class="details-btn">More Details</span>
+        </a>
+
+        <a href="../Market Price Page/graph_mango.html" class="recent-card">
+          <p>Mango</p>
+          <img src="mango.jpeg" alt="Mango">
+          <span class="details-btn">More Details</span>
+        </a>
+
+        <a href="../Market Price Page/graph_potato.html" class="recent-card">
+          <p>Potato</p>
+          <img src="potato.jpeg" alt="Potato">
+          <span class="details-btn">More Details</span>
+        </a>
+
+        <a href="../Market Price Page/graph_rice.html" class="recent-card">
+          <p>Rice</p>
+          <img src="rice.jpeg" alt="Rice">
+          <span class="details-btn">More Details</span>
+        </a>
+
+        <a href="market.html?crop=corn" class="recent-card">
+          <p>Corn</p>
+          <img src="corn.jpeg" alt="Corn">
+          <span class="details-btn">More Details</span>
+        </a>
+
+        <a href="../Market Price Page/graph_banana.html" class="recent-card">
+          <p>Banana</p>
+          <img src="banana.jpeg" alt="Banana">
+          <span class="details-btn">More Details</span>
+        </a>
+
+        <a href="../Market Price Page/graph_apple.html" class="recent-card">
+          <p>Apple</p>
+          <img src="apple.jpeg" alt="Apple">
+          <span class="details-btn">More Details</span>
+        </a>
+
+        <a href="../Market Price Page/graph_grapes.html" class="recent-card">
+          <p>Grapes</p>
+          <img src="grapes.jpeg" alt="Grapes">
+          <span class="details-btn">More Details</span>
+        </a>
+
+        <a href="market.html?crop=carrot" class="recent-card">
+          <p>Carrot</p>
+          <img src="carrot.jpeg" alt="Carrot">
+          <span class="details-btn">More Details</span>
+        </a>
+
+        <a href="../Market Price Page/graph_chilli.html" class="recent-card">
+          <p>Chilli</p>
+          <img src="chilli.jpeg" alt="Chilli">
+          <span class="details-btn">More Details</span>
+        </a>
+
+      </div>
+    </section>
+
+
+    <section class="category-section">
+
+      <div class="h2_decor">
+        <h2>Crop</h2>
+        <h2>Categories</h2>
+      </div>
+
+      <div class="category-grid">
+
+        <!-- Vegetables -->
+        <div class="category-card">
+          <h3 class="category-title">Vegetables</h3>
+          <div class="category-crops">
+
+            <a href="../Market Price Page/market_price_page.html" class="child-card">
+              <p>Tomato</p>
+              <img src="tomato.jpeg" alt="Tomato">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="../Market Price Page/graph_oninon.html" class="child-card">
+              <p>Onion</p>
+              <img src="onion.jpeg" alt="Onion">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="../Market Price Page/graph_chilli.html" class="child-card">
+              <p>Chilli</p>
+              <img src="chilli.jpeg" alt="Chilli">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="../Market Price Page/graph_potato.html" class="child-card">
+              <p>Potato</p>
+              <img src="potato.jpeg" alt="Potato">
+              <span class="details-btn">More Details</span>
+            </a>
+
+          </div>
+        </div>
+
+
+        <!-- Fruits -->
+        <div class="category-card">
+          <h3 class="category-title">Fruits</h3>
+          <div class="category-crops">
+
+            <a href="../Market Price Page/graph_mango.html" class="child-card">
+              <p>Mango</p>
+              <img src="mango.jpeg" alt="Mango">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="../Market Price Page/graph_banana.html" class="child-card">
+              <p>Banana</p>
+              <img src="banana.jpeg" alt="Banana">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="../Market Price Page/graph_apple.html" class="child-card">
+              <p>Apple</p>
+              <img src="apple.jpeg" alt="Apple">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="../Market Price Page/graph_grapes.html" class="child-card">
+              <p>Grapes</p>
+              <img src="grapes.jpeg" alt="Grapes">
+              <span class="details-btn">More Details</span>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Oil Seeds -->
+        <div class="category-card">
+          <h3 class="category-title">Oil Seeds</h3>
+          <div class="category-crops">
+
+            <a href="../Market Price Page/graph_mustard.html" class="child-card">
+              <p>Mustard</p>
+              <img src="images/mustard.png" alt="Mustard">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="../Market Price Page/graph_soyabean.html" class="child-card">
+              <p>Soybean</p>
+              <img src="images/soybean.png" alt="Soybean">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=groundnut" class="child-card">
+              <p>Groundnut</p>
+              <img src="images/groundnut.png" alt="Groundnut">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=sunflower" class="child-card">
+              <p>Sunflower</p>
+              <img src="images/sunflower.png" alt="Sunflower">
+              <span class="details-btn">More Details</span>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Cereals -->
+        <div class="category-card">
+          <h3 class="category-title">Cereals</h3>
+          <div class="category-crops">
+
+            <a href="market.html?crop=rice" class="child-card">
+              <p>Rice</p>
+              <img src="images/rice.png" alt="Rice">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=wheat" class="child-card">
+              <p>Wheat</p>
+              <img src="images/wheat.png" alt="Wheat">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=maize" class="child-card">
+              <p>Maize</p>
+              <img src="images/maize.png" alt="Maize">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=barley" class="child-card">
+              <p>Barley</p>
+              <img src="images/barley.png" alt="Barley">
+              <span class="details-btn">More Details</span>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Plantation Crops -->
+        <div class="category-card">
+          <h3 class="category-title">Plantation Crops</h3>
+          <div class="category-crops">
+
+            <a href="market.html?crop=coconut" class="child-card">
+              <p>Coconut</p>
+              <img src="images/coconut.png" alt="Coconut">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=arecanut" class="child-card">
+              <p>Arecanut</p>
+              <img src="images/arecanut.png" alt="Arecanut">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=cashew" class="child-card">
+              <p>Cashew</p>
+              <img src="images/cashew.png" alt="Cashew">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=rubber" class="child-card">
+              <p>Rubber</p>
+              <img src="images/rubber.png" alt="Rubber">
+              <span class="details-btn">More Details</span>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Spices -->
+        <div class="category-card">
+          <h3 class="category-title">Spices</h3>
+          <div class="category-crops">
+
+            <a href="market.html?crop=turmeric" class="child-card">
+              <p>Turmeric</p>
+              <img src="images/turmeric.png" alt="Turmeric">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=pepper" class="child-card">
+              <p>Pepper</p>
+              <img src="images/pepper.png" alt="Pepper">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=cardamom" class="child-card">
+              <p>Cardamom</p>
+              <img src="images/cardamom.png" alt="Cardamom">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=cumin" class="child-card">
+              <p>Cumin</p>
+              <img src="images/cumin.png" alt="Cumin">
+              <span class="details-btn">More Details</span>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Sugar Crops -->
+        <div class="category-card">
+          <h3 class="category-title">Sugar Crops</h3>
+          <div class="category-crops">
+
+            <a href="market.html?crop=sugarcane" class="child-card">
+              <p>Sugarcane</p>
+              <img src="images/sugarcane.png" alt="Sugarcane">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=sugarbeet" class="child-card">
+              <p>Sugar Beet</p>
+              <img src="images/sugarbeet.png" alt="Sugar Beet">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=palm-sugar" class="child-card">
+              <p>Palm Sugar</p>
+              <img src="images/palm-sugar.png" alt="Palm Sugar">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=stevia" class="child-card">
+              <p>Stevia</p>
+              <img src="images/stevia.png" alt="Stevia">
+              <span class="details-btn">More Details</span>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Fibers -->
+        <div class="category-card">
+          <h3 class="category-title">Fibers</h3>
+          <div class="category-crops">
+
+            <a href="market.html?crop=cotton" class="child-card">
+              <p>Cotton</p>
+              <img src="images/cotton.png" alt="Cotton">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=jute" class="child-card">
+              <p>Jute</p>
+              <img src="images/jute.png" alt="Jute">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=hemp" class="child-card">
+              <p>Hemp</p>
+              <img src="images/hemp.png" alt="Hemp">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=flax" class="child-card">
+              <p>Flax</p>
+              <img src="images/flax.png" alt="Flax">
+              <span class="details-btn">More Details</span>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Floriculture -->
+        <div class="category-card">
+          <h3 class="category-title">Floriculture</h3>
+          <div class="category-crops">
+
+            <a href="market.html?crop=rose" class="child-card">
+              <p>Rose</p>
+              <img src="images/rose.png" alt="Rose">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=marigold" class="child-card">
+              <p>Marigold</p>
+              <img src="images/marigold.png" alt="Marigold">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=jasmine" class="child-card">
+              <p>Jasmine</p>
+              <img src="images/jasmine.png" alt="Jasmine">
+              <span class="details-btn">More Details</span>
+            </a>
+
+            <a href="market.html?crop=lily" class="child-card">
+              <p>Lily</p>
+              <img src="images/lily.png" alt="Lily">
+              <span class="details-btn">More Details</span>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+  </div>
+
+
+<script>
+
+const crops = {
+tomato:"../Market Price Page/market_price_page.html",
+onion:"../Market Price Page/graph_oninon.html",
+wheat:"../Market Price Page/graph_wheat.html",
+mango:"../Market Price Page/graph_mango.html",
+potato:"../Market Price Page/graph_potato.html",
+rice:"../Market Price Page/graph_rice.html",
+banana:"../Market Price Page/graph_banana.html",
+apple:"../Market Price Page/graph_apple.html",
+grapes:"../Market Price Page/graph_grapes.html",
+chilli:"../Market Price Page/graph_chilli.html"
+};
+
+const searchBox = document.getElementById("searchBox");
+const suggestions = document.getElementById("suggestions");
+
+searchBox.addEventListener("input", function(){
+
+let value = this.value.toLowerCase();
+suggestions.innerHTML="";
+
+if(value===""){
+suggestions.style.display="none";
+return;
+}
+
+for(let crop in crops){
+
+if(crop.startsWith(value)){
+
+let div=document.createElement("div");
+div.className="suggestion-item";
+div.innerText=crop;
+
+div.onclick=function(){
+window.location.href=crops[crop];
+};
+
+suggestions.appendChild(div);
+
+}
+}
+
+suggestions.style.display="block";
+
+});
+
+function searchCrop(event){
+
+event.preventDefault();
+
+let value=searchBox.value.toLowerCase();
+
+if(crops[value]){
+window.location.href=crops[value];
+}else{
+alert("Crop not found");
+}
+
+}
+
+</script>
+</body>
+
+</html>

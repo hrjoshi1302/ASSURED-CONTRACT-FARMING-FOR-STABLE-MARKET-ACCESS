@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Product</title>
     <link rel="stylesheet" href="productadd.css">
 </head>
+
 <body>
     <div class="container">
         <h2>Add New Product</h2>
@@ -21,7 +23,7 @@
                         <div class="upload-placeholder">
                             Click to upload or drag and drop (Image 1)
                         </div>
-                    </label> 
+                    </label>
                     <input type="file" id="upload1" style="display: none;">
                 </div>
                 <div class="image-upload">
@@ -53,7 +55,7 @@
                 <option value="Foriculture">Foriculture</option>
             </select>
         </div>
-        
+
         <div class="form-group">
             <label for="Price">Price(in Rupees)</label>
             <input type="text" id="price" name="price" placeholder="Enter Price">
@@ -61,52 +63,53 @@
 
         <div class="form-group">
             <label for="description">description</label>
-            <input type="text" id="description" name="description" placeholder="description will appear here"></textarea>
+            <input type="text" id="description" name="description"
+                placeholder="description will appear here"></textarea>
         </div>
 
-                <!-- Shipping and Delivery Section -->
-                <div class="form-group">
-                    <label>Shipping and Delivery</label>
-                    <div class="shipping-delivery">
-                        <div class="shipping-item">
-                            <label for="weight">Item Weight (in Kg)</label>
-                            <input type="text" id="weight" name="weight" placeholder="Enter Weight">
-                        </div>
+        <!-- Shipping and Delivery Section -->
+        <div class="form-group">
+            <label>Shipping and Delivery</label>
+            <div class="shipping-delivery">
+                <div class="shipping-item">
+                    <label for="weight">Item Weight (in Kg)</label>
+                    <input type="text" id="weight" name="weight" placeholder="Enter Weight">
+                </div>
 
-                        <div class="shipping-item">
-                            <label>Package Size (in)</label>
-                            <input type="text" id="length" name="length" placeholder="Length">
-                            <input type="text" id="breadth" name="breadth" placeholder="Breadth">
-                            <input type="text" id="width" name="width" placeholder="Width">
-                        </div>
-                    </div>
+                <div class="shipping-item">
+                    <label>Package Size (in)</label>
+                    <input type="text" id="length" name="length" placeholder="Length">
+                    <input type="text" id="breadth" name="breadth" placeholder="Breadth">
+                    <input type="text" id="width" name="width" placeholder="Width">
                 </div>
-        
-                <div class="form-group">
-                    <button class="save-btn">Save</button>
-                </div>
-        
-                </div>
-        
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button class="save-btn">Save</button>
+        </div>
+
+    </div>
+
 
 
     <script>
-        document.getElementById('upload1').addEventListener('change', function(event) {
+        document.getElementById('upload1').addEventListener('change', function (event) {
             const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     document.getElementById('image1').style.backgroundImage = 'url(' + e.target.result + ')';
                 };
                 reader.readAsDataURL(file);
             }
         });
 
-        document.getElementById('upload2').addEventListener('change', function(event) {
+        document.getElementById('upload2').addEventListener('change', function (event) {
             const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     document.getElementById('image2').style.backgroundImage = 'url(' + e.target.result + ')';
                 };
                 reader.readAsDataURL(file);
@@ -114,4 +117,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -10,26 +10,29 @@ body {
     max-width: 500px;
     margin: 0 auto;
     background-color: #e0dfdf;
-    padding: 39px;  /* Container padding */
+    padding: 39px;
+    /* Container padding */
     border-radius: 35px;
     box-shadow: 2px 2px 20px rgba(98, 98, 98, 0.5);
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 48px; /* Increased margin for more space */
+    margin-bottom: 48px;
+    /* Increased margin for more space */
     color: #000000;
 }
 
 .form-group {
     position: relative;
-    margin-bottom: 15px; /* Shorter distance between input elements */
+    margin-bottom: 15px;
+    /* Shorter distance between input elements */
     text-align: left;
     width: 430px;
 }
 
 
-label{
+label {
     position: absolute;
     top: -10px;
     left: 10px;
@@ -41,71 +44,68 @@ label{
     transition: all 0.3s ease;
 }
 
-input[type="text"]
- {
+input[type="text"] {
     width: 480px;
     padding: 12px 18px;
     border: 1px solid #ffffff;
     border-radius: 10px;
     font-size: 16px;
-    margin-bottom:10px;
-    background: #ffffff; /* Pure white color */
+    margin-bottom: 10px;
+    background: #ffffff;
+    /* Pure white color */
 }
 
-input:hover[type="text"]
-{
+input:hover[type="text"] {
     border: 1px solid #c0c0c0;
 }
 
-input[type="email"]
- {
+input[type="email"] {
     width: 480px;
     padding: 12px 18px;
     border: 1px solid #ffffff;
     border-radius: 10px;
     font-size: 16px;
-    margin-bottom:10px;
-    background: #ffffff; /* Pure white color */
+    margin-bottom: 10px;
+    background: #ffffff;
+    /* Pure white color */
 }
 
-input:hover[type="email"]
-{
+input:hover[type="email"] {
     border: 1px solid #c0c0c0;
 }
 
-input[type="tel"]
- {
+input[type="tel"] {
     width: 300px;
     padding: 12px 18px;
     border: 1px solid #ffffff;
     border-radius: 10px;
     font-size: 16px;
-    margin-bottom:10px;
-    background: #ffffff; /* Pure white color */
+    margin-bottom: 10px;
+    background: #ffffff;
+    /* Pure white color */
 }
 
-input:hover[type="tel"]
-{
+input:hover[type="tel"] {
     border: 1px solid #c0c0c0;
 }
 
-input[type="file"]
- {
+input[type="file"] {
     width: 200px;
     padding: 12px 18px;
     border: 1px solid #ffffff;
     border-radius: 10px;
     font-size: 16px;
-    margin-bottom:14px;
-    background: #ffffff; /* Pure white color */
+    margin-bottom: 14px;
+    background: #ffffff;
+    /* Pure white color */
 }
 
-input:hover[type="file"]
-{
+input:hover[type="file"] {
     border: 1px solid #c0c0c0;
 }
-input:focus + label,
-input:not(:placeholder-shown) + label {
+
+input:focus+label,
+input:not(:placeholder-shown)+label {
     top: -10px;
     left: 10px;
     background-color: #ffffff;

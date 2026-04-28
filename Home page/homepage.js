@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll(".carousel img");
     const bullets = document.querySelector(".bullets");
 
-    let currentIndex = 0;
-    
+    let currentIndex = 3;
 
-    // Create bullets
+
+
     images.forEach((_, index) => {
         const bullet = document.createElement("div");
         bullet.classList.add("bullet");
@@ -20,15 +20,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function updateCarousel() {
-        const imageWidth = images[0].clientWidth + 20; // Image width + margin
-        carousel.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
 
-        images.forEach((img, index) => {
+        if (currentIndex === images.length) {
+            carousel.style.transform = `translateX(-${currentIndex}px)`;
+        }
+        else {
+            carousel.style.transform = `translateX(-${currentIndex * 510}px)`;
+        }
+
+        images.forEach((img) => {
             img.classList.remove("middle");
         });
 
         // Set the middle image
-        const middleIndex = Math.floor(images.length / 2);
+        const middleIndex = 1;
         const activeIndex = (currentIndex + middleIndex) % images.length;
         images[activeIndex].classList.add("middle");
 
@@ -41,34 +46,37 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.getElementById("prev").addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
+
+        if (currentIndex == 0) {
+            currentIndex = images.length;
+        }
+        currentIndex = currentIndex - 1;
         updateCarousel();
     });
 
     document.getElementById("next").addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % images.length;
+
+        if (currentIndex == images.length) {
+            currentIndex = -1;
+        }
+        currentIndex = currentIndex + 1;
         updateCarousel();
     });
 
+    setInterval(() => {
+
+        currentIndex++;
+
+        if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+
+        updateCarousel();
+
+    }, 18000);
+
     updateCarousel(); // Initial call to set up the carousel
 
-    function updateBreadcrumb(categoryName) {
-        const breadcrumb = document.querySelector('.breadcrumb-item.active');
-        breadcrumb.textContent = categoryName;
-    }
-    
-    // Call this function when a user clicks on a category
-    // Example:
-    // updateBreadcrumb('Maize (Corn)');
-    
-    
-            // Update breadcrumb when clicking on a category link
-    categoryList.querySelectorAll('.category a').forEach((link) => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const categoryName = cerealSet.name; // This gets the current cereal category name
-            updateBreadcrumb(categoryName);
-            // Optionally, you could navigate to a different page or load new content here
-        });
-    });
+
 });
+

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Product Display</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-	<script type="text/javascript">
+    <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
@@ -13,8 +14,9 @@
             }, 'google_translate_element');
         }
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -47,12 +49,12 @@
 
         .product-box:hover {
             box-shadow: 2px 2px 20px rgba(98, 98, 98);
-            transition: all 0.7s;     
+            transition: all 0.7s;
         }
 
         .product-box img {
             width: 110%;
-            height:101%;
+            height: 101%;
             object-fit: cover;
             border-radius: 8px;
         }
@@ -77,12 +79,11 @@
         .product-packaging-style {
             font-size: 14px;
             color: #555;
-            margin-bottom:2px;
+            margin-bottom: 2px;
         }
 
-        .product-packaging-style
-        {
-            margin-top:-15px;
+        .product-packaging-style {
+            margin-top: -15px;
         }
 
         .product-address {
@@ -117,40 +118,38 @@
             text-decoration: none;
             font-size: 14px;
             color: white;
-            margin-left:160px;
-            width:140px;
-            border-radius:7px;
+            margin-left: 160px;
+            width: 140px;
+            border-radius: 7px;
         }
 
         .buy-button {
             background-color: rgb(48, 137, 48);
         }
 
-        .buy-button:hover
-        {
+        .buy-button:hover {
             transition: all 0.6s;
             padding: 10px 18px;
             box-shadow: 14px 8px 30px rgb(152, 152, 152);
-            width:129px;
-            border-radius:10px;
-            font-size:17px;
-            letter-spacing:0.8px;
-            
+            width: 129px;
+            border-radius: 10px;
+            font-size: 17px;
+            letter-spacing: 0.8px;
+
         }
 
         .terms-link {
             background-color: transparent;
             border: 1px solid #007BFF;
             color: #007BFF;
-            width:135px;
+            width: 135px;
         }
 
-        .terms-linkk
-        {
+        .terms-linkk {
             background-color: transparent;
             border: 1px solid #007BFF;
             color: #007BFF;
-            width:160px;
+            width: 160px;
         }
 
         .pricing {
@@ -170,95 +169,110 @@
             list-style: none;
             background-color: #f8f9fa;
             padding: 30px;
-            position: fixed; /* Make the navigation fixed */
-            top: 0; /* Stick it to the top */
+            position: fixed;
+            /* Make the navigation fixed */
+            top: 0;
+            /* Stick it to the top */
             left: 0;
-            width: 100%; /* Full width of the page */
-            z-index: 1000; /* Ensure it's on top of other elements */
-            margin-top: 0; /* Adjust if needed */
-            margin-left: 0; /* Adjust to start from the left edge */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: add a subtle shadow */
+            width: 100%;
+            /* Full width of the page */
+            z-index: 1000;
+            /* Ensure it's on top of other elements */
+            margin-top: 0;
+            /* Adjust if needed */
+            margin-left: 0;
+            /* Adjust to start from the left edge */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            /* Optional: add a subtle shadow */
         }
 
-.breadcrumb-item {
-    margin-left: 70px;
-    margin-top: 1.18%;
-}
+        .breadcrumb-item {
+            margin-left: 70px;
+            margin-top: 1.18%;
+        }
 
-.breadcrumb-item a {
-    text-decoration: none;
-    color: #9b9b9b;
-}
+        .breadcrumb-item a {
+            text-decoration: none;
+            color: #9b9b9b;
+        }
 
-.breadcrumb-item a:hover
-{
-    color: #000000;
-    transition: all 0.6s;
-}
+        .breadcrumb-item a:hover {
+            color: #000000;
+            transition: all 0.6s;
+        }
 
-.search-form {
-    display: flex;
-    align-items: center;
-    margin-left:70px;
-}
+        .search-form {
+            display: flex;
+            align-items: center;
+            margin-left: 70px;
+        }
 
-.search-input {
-    border: 1px solid #ced4da;
-    border-radius: 20px;
-    padding: 10px 15px;
-    width: 300px; /* Adjust width as needed */
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-}
+        .search-input {
+            border: 1px solid #ced4da;
+            border-radius: 20px;
+            padding: 10px 15px;
+            width: 300px;
+            /* Adjust width as needed */
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
 
-.search-input:focus {
-    border-color: #80bdff;
-    outline: none;
-}
+        .search-input:focus {
+            border-color: #80bdff;
+            outline: none;
+        }
 
-.search-icon {
-    border: none;
-    background: none;
-    padding: 10px;
-    margin-left: -49px; /* Adjust this value based on the size of the icon and the padding */
-    cursor: pointer;
-}
+        .search-icon {
+            border: none;
+            background: none;
+            padding: 10px;
+            margin-left: -49px;
+            /* Adjust this value based on the size of the icon and the padding */
+            cursor: pointer;
+        }
 
-.search-icon i {
-    font-size: 20px; /* Adjust size of the icon */
-    color: #007bff; /* Color of the icon */
-}
+        .search-icon i {
+            font-size: 20px;
+            /* Adjust size of the icon */
+            color: #007bff;
+            /* Color of the icon */
+        }
 
-.search-icon:hover i {
-    color: #ffffff; /* Darker shade on hover */
-}
+        .search-icon:hover i {
+            color: #ffffff;
+            /* Darker shade on hover */
+        }
 
-/* Google Translate Styling */
-#google_translate_element {
-    margin-left:100px; /* Align to the right */
-	margin-top: 8px;
-	padding:7px;
-	border-radius:10px;
-}
+        /* Google Translate Styling */
+        #google_translate_element {
+            margin-left: 100px;
+            /* Align to the right */
+            margin-top: 8px;
+            padding: 7px;
+            border-radius: 10px;
+        }
 
-/* Dropdown Styling */
-#google_translate_element {
-    max-height: 80px;  /* Limit visible height to show 3-4 languages */
-      /* Enable scrolling */
-    font-size: 20px;   /* Increase font size for better visibility */
-}
+        /* Dropdown Styling */
+        #google_translate_element {
+            max-height: 80px;
+            /* Limit visible height to show 3-4 languages */
+            /* Enable scrolling */
+            font-size: 20px;
+            /* Increase font size for better visibility */
+        }
 
-/* Hide the Google Translate banner */
-.goog-te-banner-frame.skiptranslate {
-    display: none !important;
-}
+        /* Hide the Google Translate banner */
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
     </style>
 </head>
+
 <body>
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../Home page/homepage_f.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="../../../Home page/homepage_f.html">Home</a></li>
             <li class="breadcrumb-item"><a href="../../product_1new.html">Categories</a></li>
             <li class="breadcrumb-item active" aria-current="page">Current Category</li>
             <form class="search-form" action="search_results.html" method="GET">
@@ -268,7 +282,7 @@
             <!-- Google Translate Dropdown -->
             <li id="google_translate_element"></li>
         </ol>
-     
+
     </nav>
     <div class="product-container">
         <!-- Product Box 1 -->
@@ -285,10 +299,10 @@
                 <div class="product-packaging-style">Packaging : Boxed</div>
                 <div class="star-rating">⭐⭐⭐⭐ <br><span>(150 reviews)</span></div>
 
-                
-                
+
+
                 <div class="buttons-container">
-                    <button  id="generatePDF" class="button terms-linkk">Terms & Conditions</button>
+                    <button id="generatePDF" class="button terms-linkk">Terms & Conditions</button>
                     <a href="chatbox.html" class="button buy-button">Next</a>
                 </div>
             </div>
@@ -334,8 +348,8 @@
                 <div class="product-packaging-style">Packaging : Boxed</div>
                 <div class="star-rating">⭐⭐⭐⭐ <br><span>(150 reviews)</span></div>
 
-                
-                
+
+
                 <div class="buttons-container">
                     <a href="terms.pdf" target="_blank" class="button terms-link">Terms & Conditions</a>
                     <a href="chatbox.html" class="button buy-button">Next</a>
@@ -383,8 +397,8 @@
                 <div class="product-packaging-style">Packaging : Boxed</div>
                 <div class="star-rating">⭐⭐⭐⭐ <br><span>(150 reviews)</span></div>
 
-                
-                
+
+
                 <div class="buttons-container">
                     <a href="terms.pdf" target="_blank" class="button terms-link">Terms & Conditions</a>
                     <a href="chatbox.html" class="button buy-button">Next</a>
@@ -432,8 +446,8 @@
                 <div class="product-packaging-style">Packaging : Boxed</div>
                 <div class="star-rating">⭐⭐⭐⭐ <br><span>(150 reviews)</span></div>
 
-                
-                
+
+
                 <div class="buttons-container">
                     <a href="terms.pdf" target="_blank" class="button terms-link">Terms & Conditions</a>
                     <a href="chatbox.html" class="button buy-button">Next</a>
@@ -467,7 +481,7 @@
     </div>
 
     <script>
-        document.getElementById("generatePDF").addEventListener("click", function() {
+        document.getElementById("generatePDF").addEventListener("click", function () {
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
 
@@ -487,29 +501,30 @@
             doc.text("10. Return Policy: Terms and conditions for returning goods.", 20, 130);
 
             doc.save("Farming_Ecommerce_Terms.pdf");
-        });
-          function updateBreadcrumb(categoryName) {
-    const breadcrumb = document.querySelector('.breadcrumb-item.active');
-    breadcrumb.textContent = categoryName;
-}
+        });
+        function updateBreadcrumb(categoryName) {
+            const breadcrumb = document.querySelector('.breadcrumb-item.active');
+            breadcrumb.textContent = categoryName;
+        }
 
-// Call this function when a user clicks on a category
-// Example:
-// updateBreadcrumb('Maize (Corn)');
+        // Call this function when a user clicks on a category
+        // Example:
+        // updateBreadcrumb('Maize (Corn)');
 
 
         // Update breadcrumb when clicking on a category link
-categoryList.querySelectorAll('.category a').forEach((link) => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const categoryName = cerealSet.name; // This gets the current cereal category name
-        updateBreadcrumb(categoryName);
-        // Optionally, you could navigate to a different page or load new content here
-    });
-});
+        categoryList.querySelectorAll('.category a').forEach((link) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const categoryName = cerealSet.name; // This gets the current cereal category name
+                updateBreadcrumb(categoryName);
+                // Optionally, you could navigate to a different page or load new content here
+            });
+        });
 
 
-       
+
     </script>
 </body>
+
 </html>

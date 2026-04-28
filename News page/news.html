@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AgriSync Market News</title>
+    <link rel="stylesheet" href="news.css">
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,as,bn,kn,gu,ml,mr,or,pa,ta,te,ur,mni,ks,doi',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <link rel="stylesheet" href="homepage_f.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <script src="homepage.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <div class="header">
+            <img src="logo31.jpg" alt="Logo" width="200" height="50">
+            <div>
+                <h3>MINISTRY OF AGRICULTURE AND FARMERS WELFARE</h3>
+                <p>कृषि एवं किसान कल्याण मंत्रालय</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a class="txttop" href="../Home page/homepage_f.html">Home</a></li>
+                <li><a class="txttop" href="../Product page/product_1new.html">Product</a></li>
+                <li><a class="txttop"
+                        href="../Selection of market price product/selection_of_product_for_price.html">Market Price</a>
+                </li>
+
+                <li><a class="ttop" href="#">More ▼</a>
+                    <ul class="dropdown">
+                        <li><a id="dt" href="news.html">News</a></li>
+                        <li><a id="dt" href="#">Favourite</a></li>
+                        <li><a id="dt" href="#">Subsidy</a></li>
+                        <li><a id="dt" href="#">Help</a></li>
+                    </ul>
+                </li>
+                <!-- Google Translate Dropdown -->
+                <li>
+                    <div id="google_translate_element"></div>
+                </li>
+
+                <a href="../Profile page/profile_page.html">
+                    <img src="profile_img.jpeg" alt="Profile" class="user-pic">
+                </a>
+            </ul>
+        </nav>
+    </header>
+    <!-- MAIN CONTENT -->
+
+    <div class="container">
+
+        <div class="news-section">
+
+
+
+            <div id="newsContainer"></div>
+
+        </div>
+
+        <div class="sidebar">
+
+            <h2>Trending Agriculture Topics</h2>
+
+            <div class="side-card">Tomato prices surge in multiple mandis</div>
+            <div class="side-card">Government wheat procurement begins soon</div>
+            <div class="side-card">Heatwave may affect rabi crops</div>
+            <div class="side-card">India agriculture exports expected to grow</div>
+            <div class="side-card">Fertiliser demand increases before kharif season</div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+
+        const news = [
+
+            {
+                title: "Government Sets Wheat Procurement Target",
+                date: "7 March 2026",
+                crop: "wheat",
+                img: "images/wheat.jpg",
+                desc: "Government has set wheat procurement target for upcoming season."
+            },
+
+            {
+                title: "Tomato Prices Increase in Mandis",
+                date: "9 March 2026",
+                crop: "tomato",
+                img: "images/tomato.jpeg",
+                desc: "Tomato prices increased across several mandis due to lower supply."
+            },
+
+            {
+                title: "Onion Prices Fluctuate",
+                date: "11 March 2026",
+                crop: "onion",
+                img: "images/onion.webp",
+                desc: "Onion prices show fluctuations across different markets."
+            },
+
+            {
+                title: "India Agricultural Exports Expected to Rise",
+                date: "10 March 2026",
+                crop: "policy",
+                img: "images/export.webp",
+                desc: "Agricultural exports are expected to reach new highs."
+            },
+
+            {
+                title: "Rice Production Expected to Increase",
+                date: "12 March 2026",
+                crop: "rice",
+                img: "images/rice.webp",
+                desc: "Rice production likely to increase due to favorable rainfall forecast."
+            },
+
+            {
+                title: "Cotton Farmers Expect Better Prices",
+                date: "8 March 2026",
+                crop: "cotton",
+                img: "images/cotton.webp",
+                desc: "Cotton farmers expect improved market prices this season."
+            },
+
+            {
+                title: "Government Announces New Fertilizer Subsidy",
+                date: "6 March 2026",
+                crop: "policy",
+                img: "images/fertilizer.webp",
+                desc: "New subsidy plan announced to support farmers."
+            },
+
+            {
+                title: "Maize Demand Rising in Feed Industry",
+                date: "5 March 2026",
+                crop: "maize",
+                img: "images/maize.webp",
+                desc: "Feed industry demand for maize is increasing across India."
+            }
+
+        ]
+
+        function displayNews(list) {
+
+            const container = document.getElementById("newsContainer")
+
+            container.innerHTML = ""
+
+            list.sort((a, b) => new Date(b.date) - new Date(a.date))
+
+            list.forEach(n => {
+
+                container.innerHTML += `
+
+<div class="news-card">
+
+<img src="${n.img}">
+
+<div class="news-content">
+
+<h3>${n.title}</h3>
+
+<p>${n.desc}</p>
+
+<span>${n.date}</span>
+
+</div>
+
+</div>
+
+`
+
+            })
+
+        }
+
+        function filterNews(type) {
+
+            if (type === "all") {
+                displayNews(news)
+            }
+            else {
+                const filtered = news.filter(n => n.crop === type)
+                displayNews(filtered)
+            }
+
+        }
+
+        displayNews(news)
+
+    </script>
+
+</body>
+
+</html>

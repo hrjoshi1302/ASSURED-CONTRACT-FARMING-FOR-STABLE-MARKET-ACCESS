@@ -1,5 +1,4 @@
-.bg_img
-{
+.bg_img {
     filter: blur(20px);
 }
 
@@ -7,7 +6,7 @@ body {
     font-family: Arial, sans-serif;
     background-image: url();
     background-repeat: no-repeat;
-    background-size:100%;
+    background-size: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,8 +20,8 @@ body {
     height: 310px;
     display: flex;
     border-radius: 22px;
-    overflow:hidden;
-    box-shadow: 2px 2px 20px rgba(98,98,98);
+    overflow: hidden;
+    box-shadow: 2px 2px 20px rgba(98, 98, 98);
 }
 
 
@@ -33,13 +32,14 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color:#e0dfdf;
-    opacity:1px;
+    background-color: #e0dfdf;
+    opacity: 1px;
 }
 
 .options-container h1 {
     font-size: 27px;
-    color: rgb(44, 62, 80); /* Midnight Blue */
+    color: rgb(44, 62, 80);
+    /* Midnight Blue */
     margin-bottom: 56px;
 }
 
@@ -51,29 +51,32 @@ body {
     text-align: center;
     font-size: 1.2em;
     text-decoration: none;
-    color: rgb(44, 62, 80); /* Midnight Blue */
-    background-color: rgb(255, 255, 255); /* White */
+    color: rgb(44, 62, 80);
+    /* Midnight Blue */
+    background-color: rgb(255, 255, 255);
+    /* White */
     border: none;
-    border-radius:12px;
+    border-radius: 12px;
     transition: all 0.3s ease;
     text-transform: uppercase;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
-    letter-spacing:0.2px;
+    letter-spacing: 0.2px;
 }
 
-.buyer
-{
-    margin-bottom:20px;
+.buyer {
+    margin-bottom: 20px;
 }
 
 .role-option:hover {
-    background-color: rgba(23, 77, 45, 0.938); /* Light Green */
-    color: rgb(255, 255, 255); /* White */
-    box-shadow:11px 10px 80px rgb(52, 52, 52);
-    width:137px;
-    padding:18px;
+    background-color: rgba(23, 77, 45, 0.938);
+    /* Light Green */
+    color: rgb(255, 255, 255);
+    /* White */
+    box-shadow: 11px 10px 80px rgb(52, 52, 52);
+    width: 137px;
+    padding: 18px;
     transition: all 0.5s;
-    letter-spacing:0.9px;
+    letter-spacing: 0.9px;
 }
 
 .image-container {
@@ -104,5 +107,3 @@ body {
 .active {
     opacity: 1;
 }
-
-
