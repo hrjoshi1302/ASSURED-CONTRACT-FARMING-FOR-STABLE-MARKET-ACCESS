@@ -59,8 +59,8 @@ After login:
 Home  
 ├── Product Listing  
 ├── Market Price  
-├── News (More)  
-└── Profile (More)  
+├── News  
+└── Profile   
 
 ---
 
@@ -139,18 +139,19 @@ Home
 
 ## Project Structure
 
-PROJECT SEM6 MAIN/
-
-├── Language page/  
-├── Choose role page/  
-├── Log in page/  
-├── Home page/  
-├── Product page/  
-├── Market Price Page/  
-├── News page/  
-├── Profile page/  
-├── Selection of market price product/  
-└── README.md  
+MAIN/
+│
+├── Language page/
+├── Choose role page/
+├── Log in page/
+├── Home page/
+├── Product page/
+├── Market Price Page/
+├── News page/
+├── Profile page/
+├── Selection of market price product/
+│
+└── README.md
 
 ---
 
